@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - couverture de code des tests - src/Service_BatteryManager.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - Service_BatteryManager.c<span style="font-size: 80%;"> (source / <a href="Service_BatteryManager.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">couverture de code des tests</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2016-02-23 15:27:39</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /*============================================================================*/</a>
+<span class="lineNum">       2 </span>            : /*                              ROBOSOFT                                      */
+<span class="lineNum">       3 </span>            : /*============================================================================*/
+<span class="lineNum">       4 </span>            : /*                        OBJECT SPECIFICATION                                */
+<span class="lineNum">       5 </span>            : /*============================================================================*/
+<span class="lineNum">       6 </span>            : /*! 
+<span class="lineNum">       7 </span>            :  * $Source: Service_BatteryManager.c 
+<span class="lineNum">       8 </span>            :  * $Author: Slo 
+<span class="lineNum">       9 </span>            :  * $Date: 2015/12/08  
+<span class="lineNum">      10 </span>            :  */
+<span class="lineNum">      11 </span>            : /*============================================================================*/
+<span class="lineNum">      12 </span>            : /* DESCRIPTION :                                                              */
+<span class="lineNum">      13 </span>            : /** \file  Service_BatteryManager.c 
+<span class="lineNum">      14 </span>            :   * \brief Fichier Source du Service BatteryManager
+<span class="lineNum">      15 </span>            : */
+<span class="lineNum">      16 </span>            : /*============================================================================*/
+<span class="lineNum">      17 </span>            : /* COPYRIGHT (C) ROBOSOFT 2015                                                */ 
+<span class="lineNum">      18 </span>            : /* ALL RIGHTS RESERVED                                                        */
+<span class="lineNum">      19 </span>            : /*                                                                            */
+<span class="lineNum">      20 </span>            : /* The reproduction, transmission, or use of this document or its content is  */
+<span class="lineNum">      21 </span>            : /* not permitted without express written authority. Offenders will be liable  */
+<span class="lineNum">      22 </span>            : /* for damages.                                                               */
+<span class="lineNum">      23 </span>            : /* All rights, including rights created by patent grant or registration of a  */
+<span class="lineNum">      24 </span>            : /* utility model or design, are reserved.                                     */
+<span class="lineNum">      25 </span>            : /*                                                                            */
+<span class="lineNum">      26 </span>            : /*============================================================================*/ 
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span>            : /* Includes                                                                   */
+<span class="lineNum">      29 </span>            : /*============================================================================*/ 
+<span class="lineNum">      30 </span>            : #include &quot;types.h&quot;
+<span class="lineNum">      31 </span>            : #include &quot;Library_StdLib.h&quot;
+<span class="lineNum">      32 </span>            : #include &quot;Library_LibBatMngBmv700.h&quot;
+<span class="lineNum">      33 </span>            : #include &quot;Service_BatteryManager.h&quot; 
+<span class="lineNum">      34 </span>            : #include &lt;string.h&gt;
+<span class="lineNum">      35 </span>            : 
+<span class="lineNum">      36 </span>            : /* Constants and types                                                        */
+<span class="lineNum">      37 </span>            : /*============================================================================*/ 
+<span class="lineNum">      38 </span>            :    
+<span class="lineNum">      39 </span>            : /* Variables                                                                  */
+<span class="lineNum">      40 </span>            : /*============================================================================*/ 
+<span class="lineNum">      41 </span>            : static Std_ReturnType gt_InitBatteryManager_Status=E_NOT_OK; /* Global Initialization variable */
+<span class="lineNum">      42 </span>            : static Std_ReturnType gt_ConfBatteryManager_Status=E_NOT_OK; /* Global Initialization variable */
+<span class="lineNum">      43 </span>            : static ts_Bmv700_Data gs_Bmv700_NewData;
+<span class="lineNum">      44 </span>            : static ts_Bmv700_Data gs_Bmv700_Data;
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            : /* Private functions prototypes                                               */
+<span class="lineNum">      47 </span>            : /*============================================================================*/ 
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            : /* Inline functions                                                           */
+<span class="lineNum">      50 </span>            : /*============================================================================*/
+<span class="lineNum">      51 </span>            : 
+<span class="lineNum">      52 </span>            : /* Private functions                                                          */
+<span class="lineNum">      53 </span>            : /*============================================================================*/
+<span class="lineNum">      54 </span>            : 
+<span class="lineNum">      55 </span>            : /* Public functions                                                           */
+<span class="lineNum">      56 </span>            : /*============================================================================*/
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span>            : /**
+<span class="lineNum">      59 </span>            :  * \fn  Std_ReturnType SrvBat_Initialize(void) 
+<span class="lineNum">      60 </span>            :  * \brief this function will Initialize module and battery manager library
+<span class="lineNum">      61 </span>            :  *
+<span class="lineNum">      62 </span>            :  * \param  none
+<span class="lineNum">      63 </span>            :  *
+<span class="lineNum">      64 </span>            : * \return Std_ReturnType :
+<span class="lineNum">      65 </span>            : *         - E_OK if good return function
+<a name="66"><span class="lineNum">      66 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">      67 </span>            :  */
+<span class="lineNum">      68 </span><span class="lineCov">          6 : Std_ReturnType SrvBat_Initialize(void) </span>
+<span class="lineNum">      69 </span>            : {
+<span class="lineNum">      70 </span>            :     /*! Declaration */     
+<span class="lineNum">      71 </span>            :     Std_ReturnType t_Initialize_Status; 
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span>            :     /*! Initialization */
+<span class="lineNum">      74 </span><span class="lineCov">          6 :     t_Initialize_Status=E_OK;</span>
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span>            :     /*! Function Body */
+<span class="lineNum">      77 </span><span class="lineCov">          6 :     t_Initialize_Status|=LibBatMngBmv700_Initialize();</span>
+<span class="lineNum">      78 </span><span class="lineCov">          6 :         gt_InitBatteryManager_Status=t_Initialize_Status;</span>
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            :     /*! return code */
+<span class="lineNum">      81 </span><span class="lineCov">          6 :     return(t_Initialize_Status);</span>
+<span class="lineNum">      82 </span>            : }
+<span class="lineNum">      83 </span>            : 
+<span class="lineNum">      84 </span>            : /**
+<span class="lineNum">      85 </span>            :  * \fn  Std_ReturnType SrvBat_Configure( const ts_SrvBat_configuration * const ps_configuration )
+<span class="lineNum">      86 </span>            :  * \brief this function will configure and open battery manager library
+<span class="lineNum">      87 </span>            :  *
+<span class="lineNum">      88 </span>            :  * \param  &lt;const ts_libBatMngBmv700_configuration * const ps_configuration&gt; { library manager configuration }
+<span class="lineNum">      89 </span>            :  *
+<span class="lineNum">      90 </span>            : * \return Std_ReturnType :
+<span class="lineNum">      91 </span>            : *         - E_OK if good return function
+<a name="92"><span class="lineNum">      92 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">      93 </span>            :  */
+<span class="lineNum">      94 </span><span class="lineCov">          6 : Std_ReturnType SrvBat_Configure( const ts_libBatMngBmv700_configuration * const ps_configuration )</span>
+<span class="lineNum">      95 </span>            : {
+<span class="lineNum">      96 </span>            :     /* Declaration */
+<span class="lineNum">      97 </span>            :     Std_ReturnType t_Configure_Status ;
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span>            :     /* Initialization */
+<span class="lineNum">     100 </span><span class="lineCov">          6 :     t_Configure_Status = E_OK ;</span>
+<span class="lineNum">     101 </span>            : 
+<span class="lineNum">     102 </span>            :         /* Function Body */
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span><span class="lineCov">          6 :         if( (E_NOT_OK != gt_InitBatteryManager_Status) &amp;&amp;</span>
+<span class="lineNum">     105 </span>            :                 (NULL_PTR != ps_configuration) )
+<span class="lineNum">     106 </span>            :         {
+<span class="lineNum">     107 </span><span class="lineCov">          3 :                 t_Configure_Status |= LibBatMngBmv700_Configure( ps_configuration ) ;</span>
+<span class="lineNum">     108 </span><span class="lineCov">          3 :                 t_Configure_Status |= LibBatMngBmv700_Open() ;</span>
+<span class="lineNum">     109 </span>            :         }
+<span class="lineNum">     110 </span>            :         else
+<span class="lineNum">     111 </span>            :         {
+<span class="lineNum">     112 </span><span class="lineCov">          3 :             t_Configure_Status = E_NOT_OK ;</span>
+<span class="lineNum">     113 </span>            :         }
+<span class="lineNum">     114 </span><span class="lineCov">          6 :         gt_ConfBatteryManager_Status=t_Configure_Status;</span>
+<span class="lineNum">     115 </span>            : 
+<span class="lineNum">     116 </span>            :     /*! return code */
+<span class="lineNum">     117 </span><span class="lineCov">          6 :     return(t_Configure_Status);</span>
+<span class="lineNum">     118 </span>            : }
+<span class="lineNum">     119 </span>            : 
+<span class="lineNum">     120 </span>            : /**
+<span class="lineNum">     121 </span>            :  * \fn  Std_ReturnType SrvBat_Manage(void)
+<span class="lineNum">     122 </span>            :  * \brief this function will call LibBatMngBmv700_Manage
+<span class="lineNum">     123 </span>            :  *
+<span class="lineNum">     124 </span>            :  * \param  none
+<span class="lineNum">     125 </span>            :  *
+<span class="lineNum">     126 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     127 </span>            : *         - E_OK if good return function
+<a name="128"><span class="lineNum">     128 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     129 </span>            :  */
+<span class="lineNum">     130 </span><span class="lineCov">        306 : Std_ReturnType SrvBat_Manage(void)</span>
+<span class="lineNum">     131 </span>            : {
+<span class="lineNum">     132 </span>            :     /*! Declaration */
+<span class="lineNum">     133 </span>            :     Std_ReturnType t_Manage_Status;
+<span class="lineNum">     134 </span>            :     bool b_IsNewData;
+<span class="lineNum">     135 </span>            : 
+<span class="lineNum">     136 </span>            : 
+<span class="lineNum">     137 </span>            :     /*! Initialization */
+<span class="lineNum">     138 </span><span class="lineCov">        306 :     t_Manage_Status=E_OK;</span>
+<span class="lineNum">     139 </span><span class="lineCov">        306 :     b_IsNewData=K_FALSE;</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span>            :     /*! Function Body */
+<span class="lineNum">     142 </span><span class="lineCov">        609 :     if((E_NOT_OK!=gt_InitBatteryManager_Status)&amp;&amp;</span>
+<span class="lineNum">     143 </span><span class="lineCov">        303 :                 (E_NOT_OK!=gt_ConfBatteryManager_Status))</span>
+<span class="lineNum">     144 </span>            :     {
+<span class="lineNum">     145 </span><span class="lineCov">        300 :         t_Manage_Status|=LibBatMngBmv700_Manage();</span>
+<span class="lineNum">     146 </span><span class="lineCov">        600 :         if (E_NOT_OK!=t_Manage_Status)</span>
+<span class="lineNum">     147 </span>            :         {
+<span class="lineNum">     148 </span><span class="lineCov">        300 :                 t_Manage_Status|=LibBatMngBmv700_Get_Data(&amp;gs_Bmv700_NewData,&amp;b_IsNewData);</span>
+<span class="lineNum">     149 </span><span class="lineCov">        300 :                 if (K_FALSE!=b_IsNewData)</span>
+<span class="lineNum">     150 </span>            :                 {
+<span class="lineNum">     151 </span>            :                         /*! If New data valid, copy it in s_Bmv700_Data data structure */
+<span class="lineNum">     152 </span><span class="lineCov">        219 :                         memcpy(&amp;gs_Bmv700_Data,&amp;gs_Bmv700_NewData,sizeof(ts_Bmv700_Data));</span>
+<span class="lineNum">     153 </span>            :                 }
+<span class="lineNum">     154 </span>            :                 else
+<span class="lineNum">     155 </span>            :                 {
+<span class="lineNum">     156 </span>            :                         ; /* Do Nothing */
+<span class="lineNum">     157 </span>            :                 }
+<span class="lineNum">     158 </span>            :         }
+<span class="lineNum">     159 </span>            :     }
+<span class="lineNum">     160 </span>            :     else
+<span class="lineNum">     161 </span>            :     {
+<span class="lineNum">     162 </span>            :                 /* Module is not initialized, Halt */
+<span class="lineNum">     163 </span><span class="lineCov">          6 :         t_Manage_Status=E_NOT_OK;</span>
+<span class="lineNum">     164 </span>            :     }
+<span class="lineNum">     165 </span>            : 
+<span class="lineNum">     166 </span>            :     /*! return code */
+<span class="lineNum">     167 </span><span class="lineCov">        306 :     return(t_Manage_Status);</span>
+<span class="lineNum">     168 </span>            : }
+<span class="lineNum">     169 </span>            : 
+<span class="lineNum">     170 </span>            : 
+<span class="lineNum">     171 </span>            : /**
+<span class="lineNum">     172 </span>            :  * \fn  Std_ReturnType SrvBat_GetData(ts_Bmv700_Data * const  ps_Bmv700_Data)
+<span class="lineNum">     173 </span>            :  * \brief this function will return Battery Data
+<span class="lineNum">     174 </span>            :  *
+<span class="lineNum">     175 </span>            :  * \param  none
+<span class="lineNum">     176 </span>            :  *
+<span class="lineNum">     177 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     178 </span>            : *         - E_OK if good return function
+<a name="179"><span class="lineNum">     179 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     180 </span>            :  */
+<span class="lineNum">     181 </span><span class="lineCov">        306 : Std_ReturnType SrvBat_GetData(ts_Bmv700_Data * const  ps_Bmv700_Data)</span>
+<span class="lineNum">     182 </span>            : {
+<span class="lineNum">     183 </span>            :     /*! Declaration */
+<span class="lineNum">     184 </span>            :     Std_ReturnType t_GetData_Status;
+<span class="lineNum">     185 </span>            : 
+<span class="lineNum">     186 </span>            :     /*! Initialization */
+<span class="lineNum">     187 </span><span class="lineCov">        306 :     t_GetData_Status=E_OK;</span>
+<span class="lineNum">     188 </span>            : 
+<span class="lineNum">     189 </span>            :     /*! Function Body */
+<span class="lineNum">     190 </span><span class="lineCov">        609 :     if ((E_NOT_OK!=gt_InitBatteryManager_Status)&amp;&amp;</span>
+<span class="lineNum">     191 </span><span class="lineCov">        603 :                 (E_NOT_OK!=gt_ConfBatteryManager_Status)&amp;&amp;</span>
+<span class="lineNum">     192 </span>            :                 (NULL_PTR!=ps_Bmv700_Data))
+<span class="lineNum">     193 </span>            :     {
+<span class="lineNum">     194 </span><span class="lineCov">        300 :         memcpy(ps_Bmv700_Data,&amp;gs_Bmv700_Data,sizeof(ts_Bmv700_Data));</span>
+<span class="lineNum">     195 </span>            :     }
+<span class="lineNum">     196 </span>            :     else
+<span class="lineNum">     197 </span>            :     {
+<span class="lineNum">     198 </span><span class="lineCov">          6 :         t_GetData_Status=E_NOT_OK;</span>
+<span class="lineNum">     199 </span>            :     }
+<span class="lineNum">     200 </span>            : 
+<span class="lineNum">     201 </span>            :     /*! return code */
+<span class="lineNum">     202 </span><span class="lineCov">        306 :     return(t_GetData_Status);</span>
+<span class="lineNum">     203 </span>            : }
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span>            : /**
+<span class="lineNum">     206 </span>            :  * \fn  Std_ReturnType SrvBat_Close(void)
+<span class="lineNum">     207 </span>            :  * \brief this function will close Battery manager library
+<span class="lineNum">     208 </span>            :  *
+<span class="lineNum">     209 </span>            :  * \param  &lt;parameter-name&gt; { parameter description }
+<span class="lineNum">     210 </span>            :  *
+<span class="lineNum">     211 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     212 </span>            : *         - E_OK if good return function
+<a name="213"><span class="lineNum">     213 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     214 </span>            :  */
+<span class="lineNum">     215 </span><span class="lineCov">          9 : Std_ReturnType SrvBat_Close(void)</span>
+<span class="lineNum">     216 </span>            : {
+<span class="lineNum">     217 </span>            :         /* Declaration */
+<span class="lineNum">     218 </span>            :         Std_ReturnType t_Close_Status;
+<span class="lineNum">     219 </span>            : 
+<span class="lineNum">     220 </span>            :         /* Initialization */
+<span class="lineNum">     221 </span><span class="lineCov">          9 :         t_Close_Status = E_OK ;</span>
+<span class="lineNum">     222 </span>            : 
+<span class="lineNum">     223 </span>            :         /* Function Body */
+<span class="lineNum">     224 </span><span class="lineCov">         15 :         if((E_NOT_OK != gt_InitBatteryManager_Status)&amp;&amp;</span>
+<span class="lineNum">     225 </span><span class="lineCov">          6 :                 (E_NOT_OK!=gt_ConfBatteryManager_Status))</span>
+<span class="lineNum">     226 </span>            :         {
+<span class="lineNum">     227 </span><span class="lineCov">          3 :                 t_Close_Status |= LibBatMngBmv700_Close();</span>
+<span class="lineNum">     228 </span>            :         }
+<span class="lineNum">     229 </span>            :         else
+<span class="lineNum">     230 </span>            :         {
+<span class="lineNum">     231 </span>            :                 /*! Module is not initialized, Halt */
+<span class="lineNum">     232 </span><span class="lineCov">          6 :                 t_Close_Status = E_NOT_OK ;</span>
+<span class="lineNum">     233 </span>            :         }
+<span class="lineNum">     234 </span>            : 
+<span class="lineNum">     235 </span>            :         /* return code */
+<span class="lineNum">     236 </span><span class="lineCov">          9 :         return(t_Close_Status);</span>
+<span class="lineNum">     237 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - couverture de code des tests - /home/seb/01_Project/01_tangela/tangela/02_Code/02_Middleware/Library_LibBatMngBmv700/src/Library_LibBatMngBmv700.c</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../../../../index.html">top level</a> - <a href="index.html">home/seb/01_Project/01_tangela/tangela/02_Code/02_Middleware/Library_LibBatMngBmv700/src</a> - Library_LibBatMngBmv700.c<span style="font-size: 80%;"> (source / <a href="Library_LibBatMngBmv700.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">couverture de code des tests</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">177</td>
+            <td class="headerCovTableEntry">193</td>
+            <td class="headerCovTableEntryHi">91.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2016-02-23 15:27:39</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /*============================================================================*/</a>
+<span class="lineNum">       2 </span>            : /*                              ROBOSOFT                                      */
+<span class="lineNum">       3 </span>            : /*============================================================================*/
+<span class="lineNum">       4 </span>            : /*                        OBJECT SPECIFICATION                                */
+<span class="lineNum">       5 </span>            : /*============================================================================*/
+<span class="lineNum">       6 </span>            : /*! 
+<span class="lineNum">       7 </span>            :  * $Source: Library_LibBatMngBmv700.c 
+<span class="lineNum">       8 </span>            :  * $Author: MDega 
+<span class="lineNum">       9 </span>            :  * $Date: 2015/12/08  
+<span class="lineNum">      10 </span>            :  */
+<span class="lineNum">      11 </span>            : /*============================================================================*/
+<span class="lineNum">      12 </span>            : /* DESCRIPTION :                                                              */
+<span class="lineNum">      13 </span>            : /** \file  Library_LibBatMngBmv700.c 
+<span class="lineNum">      14 </span>            :   * \brief Fichier Source du Service LibBatMngBmv700
+<span class="lineNum">      15 </span>            : */
+<span class="lineNum">      16 </span>            : /*============================================================================*/
+<span class="lineNum">      17 </span>            : /* COPYRIGHT (C) ROBOSOFT 2015                                                */ 
+<span class="lineNum">      18 </span>            : /* ALL RIGHTS RESERVED                                                        */
+<span class="lineNum">      19 </span>            : /*                                                                            */
+<span class="lineNum">      20 </span>            : /* The reproduction, transmission, or use of this document or its content is  */
+<span class="lineNum">      21 </span>            : /* not permitted without express written authority. Offenders will be liable  */
+<span class="lineNum">      22 </span>            : /* for damages.                                                               */
+<span class="lineNum">      23 </span>            : /* All rights, including rights created by patent grant or registration of a  */
+<span class="lineNum">      24 </span>            : /* utility model or design, are reserved.                                     */
+<span class="lineNum">      25 </span>            : /*                                                                            */
+<span class="lineNum">      26 </span>            : /*============================================================================*/ 
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span>            : /* Includes                                                                   */
+<span class="lineNum">      29 </span>            : /*============================================================================*/ 
+<span class="lineNum">      30 </span>            : #include &quot;types.h&quot;
+<span class="lineNum">      31 </span>            : #include &quot;Library_StdLib.h&quot;
+<span class="lineNum">      32 </span>            : #include &quot;Library_LibBatMngBmv700.h&quot; 
+<span class="lineNum">      33 </span>            : #include &lt;string.h&gt;
+<span class="lineNum">      34 </span>            : #include &lt;stdio.h&gt;
+<span class="lineNum">      35 </span>            : 
+<span class="lineNum">      36 </span>            : /* Constants and types                                                        */
+<span class="lineNum">      37 </span>            : /*============================================================================*/ 
+<span class="lineNum">      38 </span>            : uint8 au8_FieldLabelBuffer[9];
+<span class="lineNum">      39 </span>            : uint8 au8_FieldValueBuffer[33];
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : //#define K_MAX_FIELDS_NUMBER 18
+<span class="lineNum">      42 </span>            : //
+<span class="lineNum">      43 </span>            : //#define K_MASK_AR_LOW_VOLTAGE                         1
+<span class="lineNum">      44 </span>            : //#define K_MASK_AR_HIGH_VOLTAGE                        2
+<span class="lineNum">      45 </span>            : //#define K_MASK_AR_LOW_SOC                             4
+<span class="lineNum">      46 </span>            : //#define K_MASK_AR_LOW_STARTER_VOLTAGE         8
+<span class="lineNum">      47 </span>            : //#define K_MASK_AR_HIGH_STARTER_VOLTAGE        16
+<span class="lineNum">      48 </span>            : //#define K_MASK_AR_LOW_TEMPERATURE             32
+<span class="lineNum">      49 </span>            : //#define K_MASK_AR_HIGH_TEMPERATURE            64
+<span class="lineNum">      50 </span>            : //#define K_MASK_AR_MID_VOLTAGE                         128
+<span class="lineNum">      51 </span>            : #define K_LABEL_SIZE_MAX                                        10
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            : typedef enum{
+<span class="lineNum">      54 </span>            :         E_BMV_READ_LABEL=0,
+<span class="lineNum">      55 </span>            :         E_BMV_READ_VALUE,
+<span class="lineNum">      56 </span>            :         E_NO_VALID_VALUE
+<span class="lineNum">      57 </span>            : }te_Bmv700_ReadMode;
+<span class="lineNum">      58 </span>            : 
+<span class="lineNum">      59 </span>            : typedef enum
+<span class="lineNum">      60 </span>            : {
+<span class="lineNum">      61 </span>            :         E_BMV_LABEL_P = 0x50,
+<span class="lineNum">      62 </span>            :         E_BMV_LABEL_V = 0x56,
+<span class="lineNum">      63 </span>            :         E_BMV_LABEL_I = 0x49,
+<span class="lineNum">      64 </span>            :         E_BMV_LABEL_CE = 0x4345,
+<span class="lineNum">      65 </span>            :         E_BMV_LABEL_SOC = 0x534F43,
+<span class="lineNum">      66 </span>            :         E_BMV_LABEL_TTG = 0x545447,
+<span class="lineNum">      67 </span>            :         E_BMV_LABEL_ALARM = 0x6c61726d,
+<span class="lineNum">      68 </span>            :         E_BMV_LABEL_RELAY = 0x656c6179,
+<span class="lineNum">      69 </span>            :         E_BMV_LABEL_AR = 0x4152,
+<span class="lineNum">      70 </span>            :         E_BMV_LABEL_H1 = 0x4831,
+<span class="lineNum">      71 </span>            :         E_BMV_LABEL_H2 = 0x4832,
+<span class="lineNum">      72 </span>            :         E_BMV_LABEL_H3 = 0x4833,
+<span class="lineNum">      73 </span>            :         E_BMV_LABEL_H4 = 0x4834,
+<span class="lineNum">      74 </span>            :         E_BMV_LABEL_H5 = 0x4835,
+<span class="lineNum">      75 </span>            :         E_BMV_LABEL_H6 = 0x4836,
+<span class="lineNum">      76 </span>            :         E_BMV_LABEL_H7 = 0x4837,
+<span class="lineNum">      77 </span>            :         E_BMV_LABEL_H8 = 0x4838,
+<span class="lineNum">      78 </span>            :         E_BMV_LABEL_H9 = 0x4839,
+<span class="lineNum">      79 </span>            :         E_BMV_LABEL_H10 = 0x483130,
+<span class="lineNum">      80 </span>            :         E_BMV_LABEL_H11 = 0x483131,
+<span class="lineNum">      81 </span>            :         E_BMV_LABEL_H12 = 0x483132,
+<span class="lineNum">      82 </span>            :         E_BMV_LABEL_H13 = 0x483133,
+<span class="lineNum">      83 </span>            :         E_BMV_LABEL_H14 = 0x483134,
+<span class="lineNum">      84 </span>            :         E_BMV_LABEL_H15 = 0x483135,
+<span class="lineNum">      85 </span>            :         E_BMV_LABEL_H16 = 0x483136,
+<span class="lineNum">      86 </span>            :         E_BMV_LABEL_H17 = 0x483137,
+<span class="lineNum">      87 </span>            :         E_BMV_LABEL_H18 = 0x483138,
+<span class="lineNum">      88 </span>            :         E_BMV_LABEL_H19 = 0x483139,
+<span class="lineNum">      89 </span>            :         E_BMV_LABEL_H20 = 0x483230,
+<span class="lineNum">      90 </span>            :         E_BMV_LABEL_H21 = 0x483231,
+<span class="lineNum">      91 </span>            :         E_BMV_LABEL_H22 = 0x483232,
+<span class="lineNum">      92 </span>            :         E_BMV_LABEL_H23 = 0x483233,
+<span class="lineNum">      93 </span>            :         E_BMV_LABEL_ERR = 0x455252,
+<span class="lineNum">      94 </span>            :         E_BMV_LABEL_CS = 0x4353,
+<span class="lineNum">      95 </span>            :         E_BMV_LABEL_BMV = 0x424D56,
+<span class="lineNum">      96 </span>            :         E_BMV_LABEL_FW = 0x4657,
+<span class="lineNum">      97 </span>            :         E_BMV_LABEL_PID = 0x504944,
+<span class="lineNum">      98 </span>            :         E_BMV_LABEL_SER = 0x534552,
+<span class="lineNum">      99 </span>            :         E_BMV_LABEL_HSDS = 0x48534453,
+<span class="lineNum">     100 </span>            :         E_BMV_LABEL_CHECKSUM=0x6b73756d
+<span class="lineNum">     101 </span>            : }te_Bmv700_label;
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span>            : #define BUFFERSIZE_BMV 600
+<span class="lineNum">     104 </span>            : #define RS232_TIMEOUT_BMV 2 //in seconds
+<span class="lineNum">     105 </span>            : #define RET_LIMIT 3
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span>            : #define K_FRAME_SIZE_MAX        1024
+<span class="lineNum">     108 </span>            : #define K_BUFFER_SIZE_MAX 256
+<span class="lineNum">     109 </span>            : 
+<span class="lineNum">     110 </span>            : /* Variables                                                                  */
+<span class="lineNum">     111 </span>            : /*============================================================================*/ 
+<span class="lineNum">     112 </span>            : static Std_ReturnType gt_InitLibBatMngBmv700_Status; /* Global Initialization variable */
+<span class="lineNum">     113 </span>            : static Std_ReturnType gt_ConfigLibBatMngBmv700_Status; /* Global Configuration variable */
+<span class="lineNum">     114 </span>            : static ts_libBatMngBmv700_configuration gs_configuration;
+<span class="lineNum">     115 </span>            : static uint8 au8_Label[100];
+<span class="lineNum">     116 </span>            : static uint8 gau8_buffer[K_FRAME_SIZE_MAX];
+<span class="lineNum">     117 </span>            : static uint8 gau8_GlobalBuffer[K_FRAME_SIZE_MAX];
+<span class="lineNum">     118 </span>            : static uint8 gau8_tempBuffer[K_FRAME_SIZE_MAX];
+<span class="lineNum">     119 </span>            : static sint32 gs32_port_desc;
+<span class="lineNum">     120 </span>            : static ts_Bmv700_Data gs_Bmv700_Data;
+<span class="lineNum">     121 </span>            : static uint8 au8_RawData[1024];
+<span class="lineNum">     122 </span>            : static uint32 gu32_index_LastEndOfBlockChecksum;
+<span class="lineNum">     123 </span>            : static uint32 gu32_index_StartOfBlock;
+<span class="lineNum">     124 </span>            : static bool gb_ChecksumValid;
+<span class="lineNum">     125 </span>            : static uint32 gu32_GlobaLBufferIndex;
+<span class="lineNum">     126 </span>            : 
+<span class="lineNum">     127 </span>            : /* Private functions prototypes                                               */
+<span class="lineNum">     128 </span>            : /*============================================================================*/
+<span class="lineNum">     129 </span>            : static Std_ReturnType receive_label_and_value(void);
+<span class="lineNum">     130 </span>            : Std_ReturnType CompleteDataStructure(const te_Bmv700_label e_label,const sint32 s32_value, const uint32 u32_hexvalue, const uint8 * const pu8_svalue, uint32 u32_index_EndOfBlock);
+<span class="lineNum">     131 </span>            : static Std_ReturnType ComputeChecksum( uint8 * const pu8_data, const uint32 u32_BlockStart, const uint32 u32_BlockLength, const uint32 u32_BufferMaxSize);
+<span class="lineNum">     132 </span>            : 
+<span class="lineNum">     133 </span>            : /* Inline functions                                                           */
+<span class="lineNum">     134 </span>            : /*============================================================================*/
+<span class="lineNum">     135 </span>            : 
+<span class="lineNum">     136 </span>            : 
+<span class="lineNum">     137 </span>            : /* Private functions                                                          */
+<span class="lineNum">     138 </span>            : /*============================================================================*/
+<span class="lineNum">     139 </span>            : 
+<span class="lineNum">     140 </span>            : /**
+<span class="lineNum">     141 </span>            :  * \fn  ComputeChecksum( uint8* pau8_data , uint16 u16_dataLength , uint8* pau8_checksum )
+<span class="lineNum">     142 </span>            :  * \brief this function calculates checksum
+<span class="lineNum">     143 </span>            :  *
+<span class="lineNum">     144 </span>            :  * \param  pau8_data [in] : Pointer of message
+<span class="lineNum">     145 </span>            :  * \param  pu16_dataLength [in] : Size of message
+<span class="lineNum">     146 </span>            :  * \param  pau8_checksum [OUT] : Checksum
+<span class="lineNum">     147 </span>            :  *
+<span class="lineNum">     148 </span>            : * \return void
+<a name="149"><span class="lineNum">     149 </span>            :  */</a>
+<span class="lineNum">     150 </span>            : //static Std_ReturnType ComputeChecksum( uint8 * const pu8_data, const uint32 u32_BlockLength, const uint32 u32_Checksum_receive, uint8 * const pu8_RawData )
+<span class="lineNum">     151 </span><span class="lineCov">        768 : static Std_ReturnType ComputeChecksum( uint8 * const pu8_data, const uint32 u32_BlockStart, const uint32 u32_BlockLength, const uint32 u32_BufferMaxSize)</span>
+<span class="lineNum">     152 </span>            : {
+<span class="lineNum">     153 </span>            :         /* Declaration */
+<span class="lineNum">     154 </span>            :         Std_ReturnType t_checksum_status;
+<span class="lineNum">     155 </span>            :         uint32 u32_checksum_compute ;
+<span class="lineNum">     156 </span>            :         uint32 u32_i ;
+<span class="lineNum">     157 </span>            :         uint32 u32_j ;
+<span class="lineNum">     158 </span>            : 
+<span class="lineNum">     159 </span>            :         /* Initialization */
+<span class="lineNum">     160 </span><span class="lineCov">        768 :         t_checksum_status=E_OK;</span>
+<span class="lineNum">     161 </span><span class="lineCov">        768 :         u32_checksum_compute=0;</span>
+<span class="lineNum">     162 </span>            : 
+<span class="lineNum">     163 </span>            :         /* Function body */
+<span class="lineNum">     164 </span><span class="lineCov">        768 :         if(NULL_PTR != pu8_data)</span>
+<span class="lineNum">     165 </span>            :         {
+<span class="lineNum">     166 </span><span class="lineCov">      66126 :                 for( u32_i = u32_BlockStart ; u32_i &lt; u32_BlockLength; u32_i++ )</span>
+<span class="lineNum">     167 </span>            :                 {
+<span class="lineNum">     168 </span><span class="lineCov">      65358 :                         u32_j=u32_i%u32_BufferMaxSize;</span>
+<span class="lineNum">     169 </span><span class="lineCov">      65358 :                         u32_checksum_compute = u32_checksum_compute + *(pu8_data+u32_j) ;</span>
+<span class="lineNum">     170 </span>            :                 }
+<span class="lineNum">     171 </span><span class="lineCov">        768 :                 u32_checksum_compute=u32_checksum_compute%256;</span>
+<span class="lineNum">     172 </span><span class="lineCov">        768 :                 if (u32_checksum_compute!=0)</span>
+<span class="lineNum">     173 </span>            :                 {
+<span class="lineNum">     174 </span><span class="lineNoCov">          0 :                         gb_ChecksumValid=K_FALSE;</span>
+<span class="lineNum">     175 </span><span class="lineNoCov">          0 :                         t_checksum_status=E_NOT_OK;</span>
+<span class="lineNum">     176 </span>            :                 }
+<span class="lineNum">     177 </span>            :                 else
+<span class="lineNum">     178 </span>            :                 {
+<span class="lineNum">     179 </span><span class="lineCov">        768 :                         gb_ChecksumValid=K_TRUE;</span>
+<span class="lineNum">     180 </span><span class="lineCov">        768 :                         t_checksum_status=E_OK;</span>
+<span class="lineNum">     181 </span>            :                 }
+<span class="lineNum">     182 </span>            :         }
+<span class="lineNum">     183 </span>            :         else
+<span class="lineNum">     184 </span>            :         {
+<span class="lineNum">     185 </span><span class="lineNoCov">          0 :                 t_checksum_status=E_NOT_OK;</span>
+<span class="lineNum">     186 </span>            :         }
+<span class="lineNum">     187 </span>            : 
+<span class="lineNum">     188 </span>            :         /* return code */
+<span class="lineNum">     189 </span><span class="lineCov">        768 :         return(t_checksum_status);</span>
+<span class="lineNum">     190 </span>            : }
+<span class="lineNum">     191 </span>            : 
+<span class="lineNum">     192 </span>            : /* Public functions                                                           */
+<span class="lineNum">     193 </span>            : /*============================================================================*/
+<span class="lineNum">     194 </span>            : 
+<span class="lineNum">     195 </span>            : /**
+<span class="lineNum">     196 </span>            :  * \fn  Std_ReturnType LibBatMngBmv700_Initialize(void) 
+<span class="lineNum">     197 </span>            :  * \brief this function &lt;TBD&gt;
+<span class="lineNum">     198 </span>            :  *
+<span class="lineNum">     199 </span>            :  * \param  &lt;parameter-name&gt; { parameter description }
+<span class="lineNum">     200 </span>            :  *
+<span class="lineNum">     201 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     202 </span>            : *         - E_OK if good return function
+<a name="203"><span class="lineNum">     203 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     204 </span>            :  */
+<span class="lineNum">     205 </span><span class="lineCov">          9 : Std_ReturnType LibBatMngBmv700_Initialize(void) </span>
+<span class="lineNum">     206 </span>            : {
+<span class="lineNum">     207 </span>            :     /* Declaration */     
+<span class="lineNum">     208 </span>            :     Std_ReturnType t_Initialize_Status; 
+<span class="lineNum">     209 </span>            : 
+<span class="lineNum">     210 </span>            :     /* Initialization */
+<span class="lineNum">     211 </span><span class="lineCov">          9 :         gu32_index_LastEndOfBlockChecksum=0;</span>
+<span class="lineNum">     212 </span><span class="lineCov">          9 :         gu32_index_StartOfBlock=0;</span>
+<span class="lineNum">     213 </span><span class="lineCov">          9 :         gb_ChecksumValid=K_FALSE;</span>
+<span class="lineNum">     214 </span>            : 
+<span class="lineNum">     215 </span>            :     /* Function Body */
+<span class="lineNum">     216 </span><span class="lineCov">          9 :         t_Initialize_Status=E_OK;</span>
+<span class="lineNum">     217 </span><span class="lineCov">          9 :         gu32_GlobaLBufferIndex=0;</span>
+<span class="lineNum">     218 </span><span class="lineCov">          9 :         gs32_port_desc = E_DRVSERIAL_CLOSED ;</span>
+<span class="lineNum">     219 </span><span class="lineCov">          9 :         memset(&amp;gs_Bmv700_Data,0,sizeof(gs_Bmv700_Data));</span>
+<span class="lineNum">     220 </span><span class="lineCov">          9 :         memset(&amp;gau8_buffer[0],0,K_FRAME_SIZE_MAX);</span>
+<span class="lineNum">     221 </span>            : 
+<span class="lineNum">     222 </span><span class="lineCov">          9 :         t_Initialize_Status|=DrvSerial_Initialize();</span>
+<span class="lineNum">     223 </span>            : 
+<span class="lineNum">     224 </span><span class="lineCov">          9 :     gt_InitLibBatMngBmv700_Status=t_Initialize_Status;</span>
+<span class="lineNum">     225 </span>            : 
+<span class="lineNum">     226 </span>            :     /* return code */
+<span class="lineNum">     227 </span><span class="lineCov">          9 :     return(t_Initialize_Status);</span>
+<span class="lineNum">     228 </span>            : }
+<span class="lineNum">     229 </span>            : 
+<span class="lineNum">     230 </span>            : 
+<span class="lineNum">     231 </span>            : /**
+<span class="lineNum">     232 </span>            :  * \fn  Std_ReturnType LibImuMti_Open(void)
+<span class="lineNum">     233 </span>            :  * \brief this function opens serial port
+<span class="lineNum">     234 </span>            :  *
+<span class="lineNum">     235 </span>            :  * \param  none
+<span class="lineNum">     236 </span>            :  *
+<span class="lineNum">     237 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     238 </span>            : *         - E_OK if good return function
+<a name="239"><span class="lineNum">     239 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     240 </span>            :  */
+<span class="lineNum">     241 </span><span class="lineCov">          6 : Std_ReturnType LibBatMngBmv700_Open(void)</span>
+<span class="lineNum">     242 </span>            : {
+<span class="lineNum">     243 </span>            :     /*! Declaration */
+<span class="lineNum">     244 </span>            :         Std_ReturnType t_Open_Status;
+<span class="lineNum">     245 </span>            : 
+<span class="lineNum">     246 </span>            :     /*! Initialization */
+<span class="lineNum">     247 </span><span class="lineCov">          6 :         t_Open_Status = E_OK ;</span>
+<span class="lineNum">     248 </span>            : 
+<span class="lineNum">     249 </span>            :     /*! Function Body */
+<span class="lineNum">     250 </span><span class="lineCov">         12 :     if((E_NOT_OK!=gt_InitLibBatMngBmv700_Status) &amp;&amp;</span>
+<span class="lineNum">     251 </span><span class="lineCov">          6 :                 (E_NOT_OK!=gt_ConfigLibBatMngBmv700_Status))</span>
+<span class="lineNum">     252 </span>            :         {
+<span class="lineNum">     253 </span>            :                 /*! Open serial link */
+<span class="lineNum">     254 </span><span class="lineCov">          6 :                 t_Open_Status |= DrvSerial_Open( &amp;(gs_configuration.s_serial_configuration) , &amp;gs32_port_desc ) ;</span>
+<span class="lineNum">     255 </span><span class="lineCov">          6 :                 t_Open_Status |= DrvSerial_Flush( gs32_port_desc ) ;</span>
+<span class="lineNum">     256 </span>            :         }
+<span class="lineNum">     257 </span>            :         else
+<span class="lineNum">     258 </span>            :         {
+<span class="lineNum">     259 </span>            :                 /* Module is not initialized, Halt */
+<span class="lineNum">     260 </span><span class="lineNoCov">          0 :                 t_Open_Status = E_NOT_OK ;</span>
+<span class="lineNum">     261 </span>            :         }
+<span class="lineNum">     262 </span>            : 
+<span class="lineNum">     263 </span>            : 
+<span class="lineNum">     264 </span>            :     /*! return code */
+<span class="lineNum">     265 </span><span class="lineCov">          6 :     return(t_Open_Status);</span>
+<span class="lineNum">     266 </span>            : }
+<span class="lineNum">     267 </span>            : 
+<span class="lineNum">     268 </span>            : /**
+<span class="lineNum">     269 </span>            :  * \fn  Std_ReturnType LibImuMti_Close(void)
+<span class="lineNum">     270 </span>            :  * \brief this function closes the Imu Controller
+<span class="lineNum">     271 </span>            :  *
+<span class="lineNum">     272 </span>            :  * \param none
+<span class="lineNum">     273 </span>            :  *
+<span class="lineNum">     274 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     275 </span>            : *         - E_OK if good return function
+<a name="276"><span class="lineNum">     276 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     277 </span>            :  */
+<span class="lineNum">     278 </span><span class="lineCov">          6 : Std_ReturnType LibBatMngBmv700_Close(void)</span>
+<span class="lineNum">     279 </span>            : {
+<span class="lineNum">     280 </span>            :     /*! Declaration */
+<span class="lineNum">     281 </span>            :         Std_ReturnType t_Close_Status;
+<span class="lineNum">     282 </span>            : 
+<span class="lineNum">     283 </span>            :     /*! Initialization */
+<span class="lineNum">     284 </span><span class="lineCov">          6 :         t_Close_Status = E_OK;</span>
+<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     286 </span>            :     /*! Function Body */
+<span class="lineNum">     287 </span><span class="lineCov">         12 :     if((E_NOT_OK!=gt_InitLibBatMngBmv700_Status) &amp;&amp;</span>
+<span class="lineNum">     288 </span><span class="lineCov">          6 :                 (E_NOT_OK!=gt_ConfigLibBatMngBmv700_Status))</span>
+<span class="lineNum">     289 </span>            :     {
+<span class="lineNum">     290 </span><span class="lineCov">          6 :         t_Close_Status |= DrvSerial_Close( &amp;gs32_port_desc ) ;</span>
+<span class="lineNum">     291 </span>            :     }
+<span class="lineNum">     292 </span>            :     else
+<span class="lineNum">     293 </span>            :     {
+<span class="lineNum">     294 </span>            :                 /* Module is not initialized, Halt */
+<span class="lineNum">     295 </span><span class="lineNoCov">          0 :         t_Close_Status = E_NOT_OK;</span>
+<span class="lineNum">     296 </span>            :     }
+<span class="lineNum">     297 </span>            : 
+<span class="lineNum">     298 </span>            :     /*! return code */
+<span class="lineNum">     299 </span><span class="lineCov">          6 :     return(t_Close_Status);</span>
+<span class="lineNum">     300 </span>            : }
+<span class="lineNum">     301 </span>            : 
+<span class="lineNum">     302 </span>            : /**
+<span class="lineNum">     303 </span>            :  * \fn  Std_ReturnType LibImuMti_Configure( const ts_libImuMti_configuration * const ps_configuration )
+<span class="lineNum">     304 </span>            :  * \brief this function configures Imu module
+<span class="lineNum">     305 </span>            :  *
+<span class="lineNum">     306 </span>            :  * \param  ps_configuration : Imu configuration
+<span class="lineNum">     307 </span>            :  *
+<span class="lineNum">     308 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     309 </span>            : *         - E_OK if good return function
+<a name="310"><span class="lineNum">     310 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     311 </span>            :  */
+<span class="lineNum">     312 </span><span class="lineCov">          6 : Std_ReturnType LibBatMngBmv700_Configure( const ts_libBatMngBmv700_configuration * const ps_configuration )</span>
+<span class="lineNum">     313 </span>            : {
+<span class="lineNum">     314 </span>            :     /*! Declaration */
+<span class="lineNum">     315 </span>            :         Std_ReturnType t_Configure_status;
+<span class="lineNum">     316 </span>            : 
+<span class="lineNum">     317 </span>            :     /*! Initialization */
+<span class="lineNum">     318 </span>            : 
+<span class="lineNum">     319 </span>            :     /*! Function Body */
+<span class="lineNum">     320 </span>            : 
+<span class="lineNum">     321 </span><span class="lineCov">          6 :         if((E_NOT_OK != gt_InitLibBatMngBmv700_Status) &amp;&amp;</span>
+<span class="lineNum">     322 </span>            :                 (NULL_PTR != ps_configuration))
+<span class="lineNum">     323 </span>            :         {
+<span class="lineNum">     324 </span><span class="lineCov">          6 :                 t_Configure_status = E_OK ;</span>
+<span class="lineNum">     325 </span><span class="lineCov">          6 :                 memcpy( &amp;gs_configuration , ps_configuration , sizeof(ts_libBatMngBmv700_configuration) ) ;</span>
+<span class="lineNum">     326 </span>            :         }
+<span class="lineNum">     327 </span>            :         else
+<span class="lineNum">     328 </span>            :         {
+<span class="lineNum">     329 </span>            :                 /* Module is not initialized, Halt */
+<span class="lineNum">     330 </span><span class="lineNoCov">          0 :                 t_Configure_status = E_NOT_OK ;</span>
+<span class="lineNum">     331 </span>            :         }
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span><span class="lineCov">          6 :         gt_ConfigLibBatMngBmv700_Status=t_Configure_status;</span>
+<span class="lineNum">     334 </span>            : 
+<span class="lineNum">     335 </span>            :     /*! return code */
+<span class="lineNum">     336 </span><span class="lineCov">          6 :         return(t_Configure_status);</span>
+<span class="lineNum">     337 </span>            : }
+<span class="lineNum">     338 </span>            : 
+<span class="lineNum">     339 </span>            : /**
+<span class="lineNum">     340 </span>            :  * \fn  Std_ReturnType LibBatMngBmv700_Manage(void)
+<span class="lineNum">     341 </span>            :  * \brief this function &lt;TBD&gt;
+<span class="lineNum">     342 </span>            :  *
+<span class="lineNum">     343 </span>            :  * \param  &lt;parameter-name&gt; { parameter description }
+<span class="lineNum">     344 </span>            :  *
+<span class="lineNum">     345 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     346 </span>            : *         - E_OK if good return function
+<a name="347"><span class="lineNum">     347 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     348 </span>            :  */
+<span class="lineNum">     349 </span><span class="lineCov">        600 : Std_ReturnType LibBatMngBmv700_Manage(void)</span>
+<span class="lineNum">     350 </span>            : {
+<span class="lineNum">     351 </span>            :     /* Declaration */
+<span class="lineNum">     352 </span>            :     Std_ReturnType t_Manage_Status;
+<span class="lineNum">     353 </span>            : 
+<span class="lineNum">     354 </span>            :     /* Initialization */
+<span class="lineNum">     355 </span><span class="lineCov">        600 :         t_Manage_Status=E_OK;</span>
+<span class="lineNum">     356 </span>            : 
+<span class="lineNum">     357 </span>            :     /* Function Body */
+<span class="lineNum">     358 </span><span class="lineCov">       1200 :     if((E_NOT_OK!=gt_InitLibBatMngBmv700_Status)&amp;&amp;</span>
+<span class="lineNum">     359 </span><span class="lineCov">        600 :                 (E_NOT_OK!=gt_ConfigLibBatMngBmv700_Status))</span>
+<span class="lineNum">     360 </span>            :     {
+<span class="lineNum">     361 </span>            :         /*! Receive Label and value from BMV700 message */
+<span class="lineNum">     362 </span><span class="lineCov">        600 :         t_Manage_Status|=receive_label_and_value();</span>
+<span class="lineNum">     363 </span>            :     }
+<span class="lineNum">     364 </span>            :     else
+<span class="lineNum">     365 </span>            :     {
+<span class="lineNum">     366 </span>            :         /*! Module is not initialized, Halt */
+<span class="lineNum">     367 </span><span class="lineNoCov">          0 :         t_Manage_Status=E_NOT_OK;</span>
+<span class="lineNum">     368 </span>            :     }
+<span class="lineNum">     369 </span>            : 
+<span class="lineNum">     370 </span>            :     /* return code */
+<span class="lineNum">     371 </span><span class="lineCov">        600 :     return(t_Manage_Status);</span>
+<span class="lineNum">     372 </span>            : }
+<span class="lineNum">     373 </span>            : 
+<span class="lineNum">     374 </span>            : /**
+<span class="lineNum">     375 </span>            :  * \fn  Std_ReturnType LibBatMngBmv700_Manage(void)
+<span class="lineNum">     376 </span>            :  * \brief this function &lt;TBD&gt;
+<span class="lineNum">     377 </span>            :  *
+<span class="lineNum">     378 </span>            :  * \param  &lt;parameter-name&gt; { parameter description }
+<span class="lineNum">     379 </span>            :  *
+<span class="lineNum">     380 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     381 </span>            : *         - E_OK if good return function
+<a name="382"><span class="lineNum">     382 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     383 </span>            :  */
+<span class="lineNum">     384 </span><span class="lineCov">        600 : Std_ReturnType LibBatMngBmv700_Get_Data(ts_Bmv700_Data * const ps_Bmv700_Data, bool * const pb_IsNewData)</span>
+<span class="lineNum">     385 </span>            : {
+<span class="lineNum">     386 </span>            :     /* Declaration */
+<span class="lineNum">     387 </span>            :     Std_ReturnType t_Manage_Status;
+<span class="lineNum">     388 </span>            : 
+<span class="lineNum">     389 </span>            :     /* Initialization */
+<span class="lineNum">     390 </span>            : 
+<span class="lineNum">     391 </span>            :     /* Function Body */
+<span class="lineNum">     392 </span><span class="lineCov">       1200 :     if((E_NOT_OK!=gt_InitLibBatMngBmv700_Status)&amp;&amp;</span>
+<span class="lineNum">     393 </span><span class="lineCov">       1200 :                 (E_NOT_OK!=gt_ConfigLibBatMngBmv700_Status)&amp;&amp;</span>
+<span class="lineNum">     394 </span>            :                 (NULL_PTR!=ps_Bmv700_Data))
+<span class="lineNum">     395 </span>            :     {
+<span class="lineNum">     396 </span><span class="lineCov">        600 :         if (K_FALSE!=gb_ChecksumValid)</span>
+<span class="lineNum">     397 </span>            :         {
+<span class="lineNum">     398 </span>            :                 /*! Data returned only if Checksum is correct */
+<span class="lineNum">     399 </span><span class="lineCov">        438 :                 memcpy(ps_Bmv700_Data,&amp;gs_Bmv700_Data,sizeof(ts_Bmv700_Data));</span>
+<span class="lineNum">     400 </span>            :         }
+<span class="lineNum">     401 </span>            :         else
+<span class="lineNum">     402 </span>            :         {
+<span class="lineNum">     403 </span>            :                 ;
+<span class="lineNum">     404 </span>            :         }
+<span class="lineNum">     405 </span><span class="lineCov">        600 :         *pb_IsNewData=gb_ChecksumValid;</span>
+<span class="lineNum">     406 </span><span class="lineCov">        600 :         gb_ChecksumValid=K_FALSE;</span>
+<span class="lineNum">     407 </span>            :     }
+<span class="lineNum">     408 </span>            :     else
+<span class="lineNum">     409 </span>            :     {
+<span class="lineNum">     410 </span>            :         /*! Module is not initialized, Halt */
+<span class="lineNum">     411 </span><span class="lineNoCov">          0 :         t_Manage_Status=E_NOT_OK;</span>
+<span class="lineNum">     412 </span>            :     }
+<span class="lineNum">     413 </span>            : 
+<span class="lineNum">     414 </span>            :     /* return code */
+<span class="lineNum">     415 </span><span class="lineCov">        600 :     return(t_Manage_Status);</span>
+<span class="lineNum">     416 </span>            : }
+<span class="lineNum">     417 </span>            : 
+<span class="lineNum">     418 </span>            : /**
+<span class="lineNum">     419 </span>            :  * \fn  Std_ReturnType receive_label_and_value(void)
+<span class="lineNum">     420 </span>            :  * \brief this function will receive Bmv700 datas and values
+<span class="lineNum">     421 </span>            :  *
+<span class="lineNum">     422 </span>            :  * \param  none
+<span class="lineNum">     423 </span>            :  *
+<span class="lineNum">     424 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     425 </span>            : *         - E_OK if good return function
+<a name="426"><span class="lineNum">     426 </span>            : *         - E_NOT_OK if not</a>
+<span class="lineNum">     427 </span>            :  */
+<span class="lineNum">     428 </span><span class="lineCov">        600 : Std_ReturnType receive_label_and_value(void)</span>
+<span class="lineNum">     429 </span>            : {
+<span class="lineNum">     430 </span>            :         /* Declaration */
+<span class="lineNum">     431 </span>            :         Std_ReturnType t_Receive_Status;
+<span class="lineNum">     432 </span>            :     uint8 * pu8_Message;
+<span class="lineNum">     433 </span>            :     sint32 s32_read;
+<span class="lineNum">     434 </span>            :     uint32 u32_label;
+<span class="lineNum">     435 </span>            :     uint32 u32_i;
+<span class="lineNum">     436 </span>            :     uint32 u32_j;
+<span class="lineNum">     437 </span>            :     te_Bmv700_ReadMode e_BmvReadMode;
+<span class="lineNum">     438 </span>            :     sint32 s32_value;
+<span class="lineNum">     439 </span>            :     uint32 u32_index_EndOfBlock;
+<span class="lineNum">     440 </span>            :     uint32 u32_hexvalue;
+<span class="lineNum">     441 </span>            :     uint32 u32_CptRawData;
+<span class="lineNum">     442 </span>            :         uint8 au8_svalue[4];
+<span class="lineNum">     443 </span>            :         uint32 u32_DataRead;
+<span class="lineNum">     444 </span>            :         uint32 u32_NbDataRead_Max;
+<span class="lineNum">     445 </span>            : 
+<span class="lineNum">     446 </span>            :         /* Initialization */
+<span class="lineNum">     447 </span><span class="lineCov">        600 :         s32_read = 0 ;</span>
+<span class="lineNum">     448 </span><span class="lineCov">        600 :     u32_label=0;</span>
+<span class="lineNum">     449 </span><span class="lineCov">        600 :     u32_j=0;</span>
+<span class="lineNum">     450 </span><span class="lineCov">        600 :     u32_i=0;</span>
+<span class="lineNum">     451 </span><span class="lineCov">        600 :     u32_index_EndOfBlock=0;</span>
+<span class="lineNum">     452 </span><span class="lineCov">        600 :     t_Receive_Status=E_OK;</span>
+<span class="lineNum">     453 </span><span class="lineCov">        600 :     e_BmvReadMode=E_BMV_READ_LABEL;</span>
+<span class="lineNum">     454 </span><span class="lineCov">        600 :     u32_CptRawData=0;</span>
+<span class="lineNum">     455 </span><span class="lineCov">        600 :     u32_DataRead=0;</span>
+<span class="lineNum">     456 </span>            : 
+<span class="lineNum">     457 </span>            :         /* Function Body */
+<span class="lineNum">     458 </span>            :         /*!   Read serial link */
+<span class="lineNum">     459 </span><span class="lineCov">        600 :         t_Receive_Status |= DrvSerial_Receive( gs32_port_desc, &amp;gau8_buffer[0] , K_BUFFER_SIZE_MAX , &amp;s32_read ) ;</span>
+<span class="lineNum">     460 </span>            : 
+<span class="lineNum">     461 </span>            :         //TODO : A Corriger, Bug Buffer circulaire
+<span class="lineNum">     462 </span>            : 
+<span class="lineNum">     463 </span><span class="lineCov">        600 :         if( 0 &lt; s32_read )</span>
+<span class="lineNum">     464 </span>            :         {
+<span class="lineNum">     465 </span>            :                 /*! Check if buffer max size is not reached */
+<span class="lineNum">     466 </span><span class="lineCov">        600 :                 if ((gu32_GlobaLBufferIndex+s32_read)&gt;K_FRAME_SIZE_MAX)</span>
+<span class="lineNum">     467 </span>            :                 {
+<span class="lineNum">     468 </span>            :                         /*! Max buffer size reached =&gt; circular buffer set to zer0 */
+<span class="lineNum">     469 </span><span class="lineCov">        120 :                         memcpy(&amp;gau8_GlobalBuffer[gu32_GlobaLBufferIndex],gau8_buffer,(K_FRAME_SIZE_MAX-gu32_GlobaLBufferIndex));</span>
+<span class="lineNum">     470 </span><span class="lineCov">        120 :                         memcpy(&amp;gau8_GlobalBuffer[0],&amp;gau8_buffer[K_FRAME_SIZE_MAX-gu32_GlobaLBufferIndex],(s32_read-(K_FRAME_SIZE_MAX-gu32_GlobaLBufferIndex)));</span>
+<span class="lineNum">     471 </span><span class="lineCov">        120 :                         gu32_GlobaLBufferIndex=0;</span>
+<span class="lineNum">     472 </span>            :                 }
+<span class="lineNum">     473 </span>            :                 else
+<span class="lineNum">     474 </span>            :                 {
+<span class="lineNum">     475 </span>            :                         /*! Copy RS232 buffer in global buffer */
+<span class="lineNum">     476 </span><span class="lineCov">        480 :                         memcpy(&amp;gau8_GlobalBuffer[gu32_GlobaLBufferIndex],gau8_buffer,s32_read);</span>
+<span class="lineNum">     477 </span><span class="lineCov">        480 :                         gu32_GlobaLBufferIndex=gu32_GlobaLBufferIndex+(uint32)s32_read;</span>
+<span class="lineNum">     478 </span>            :                 }
+<span class="lineNum">     479 </span>            : 
+<span class="lineNum">     480 </span><span class="lineCov">        600 :                 if (gu32_GlobaLBufferIndex&gt;gu32_index_StartOfBlock)</span>
+<span class="lineNum">     481 </span>            :                 {
+<span class="lineNum">     482 </span><span class="lineCov">        294 :                         memcpy(&amp;gau8_tempBuffer,&amp;gau8_GlobalBuffer[gu32_index_StartOfBlock],(gu32_GlobaLBufferIndex-gu32_index_StartOfBlock));</span>
+<span class="lineNum">     483 </span><span class="lineCov">        294 :                         u32_NbDataRead_Max=gu32_GlobaLBufferIndex-gu32_index_StartOfBlock;</span>
+<span class="lineNum">     484 </span>            :                 }
+<span class="lineNum">     485 </span>            :                 /* If Circular buffer maximum value reached */
+<span class="lineNum">     486 </span>            :                 else
+<span class="lineNum">     487 </span>            :                 {
+<span class="lineNum">     488 </span><span class="lineCov">        306 :                         memcpy(&amp;gau8_tempBuffer,&amp;gau8_GlobalBuffer[gu32_index_StartOfBlock],(K_FRAME_SIZE_MAX-gu32_index_StartOfBlock));</span>
+<span class="lineNum">     489 </span><span class="lineCov">        306 :                         memcpy(&amp;gau8_tempBuffer[K_FRAME_SIZE_MAX-gu32_index_StartOfBlock],&amp;gau8_GlobalBuffer[0],gu32_GlobaLBufferIndex);</span>
+<span class="lineNum">     490 </span><span class="lineCov">        306 :                         u32_NbDataRead_Max=gu32_GlobaLBufferIndex+(K_FRAME_SIZE_MAX-gu32_index_StartOfBlock);</span>
+<span class="lineNum">     491 </span>            :                 }
+<span class="lineNum">     492 </span>            : 
+<span class="lineNum">     493 </span>            : 
+<span class="lineNum">     494 </span><span class="lineCov">        600 :                 pu8_Message = (uint8 *)strtok ((char *)gau8_tempBuffer,(const char *)&quot;\r&quot;);</span>
+<span class="lineNum">     495 </span><span class="lineCov">        600 :                 if (NULL_PTR!=pu8_Message)</span>
+<span class="lineNum">     496 </span>            :                 {
+<span class="lineNum">     497 </span>            : #ifdef K_DEBUG
+<span class="lineNum">     498 </span>            :                         printf (&quot;%s\n&quot;,pu8_Message);
+<span class="lineNum">     499 </span>            : #endif
+<span class="lineNum">     500 </span><span class="lineCov">        600 :                         u32_index_EndOfBlock=gu32_index_StartOfBlock%K_FRAME_SIZE_MAX+strlen((const char *)pu8_Message)+1;</span>
+<span class="lineNum">     501 </span><span class="lineCov">        600 :                         u32_DataRead=u32_DataRead+strlen((const char *)pu8_Message)+1;</span>
+<span class="lineNum">     502 </span><span class="lineCov">     103626 :                         while ((E_NO_VALID_VALUE!=e_BmvReadMode)&amp;&amp;</span>
+<span class="lineNum">     503 </span><span class="lineCov">     102426 :                                         (u32_DataRead&lt;u32_NbDataRead_Max)&amp;&amp;</span>
+<span class="lineNum">     504 </span>            :                                    (NULL_PTR!=pu8_Message))
+<span class="lineNum">     505 </span>            :                         {
+<span class="lineNum">     506 </span><span class="lineCov">     102426 :                                 switch(e_BmvReadMode)</span>
+<span class="lineNum">     507 </span>            :                                 {
+<span class="lineNum">     508 </span>            :                                         case E_BMV_READ_LABEL :
+<span class="lineNum">     509 </span>            :                                                 /* Robustness test */
+<span class="lineNum">     510 </span><span class="lineCov">      81198 :                                                                                         if (u32_i&gt;K_LABEL_SIZE_MAX)</span>
+<span class="lineNum">     511 </span>            :                                                                                         {
+<span class="lineNum">     512 </span><span class="lineCov">         18 :                                                                                                 e_BmvReadMode=E_NO_VALID_VALUE;</span>
+<span class="lineNum">     513 </span>            :                                                                                         }
+<span class="lineNum">     514 </span>            :                                                                                         else
+<span class="lineNum">     515 </span>            :                                                                                         {
+<span class="lineNum">     516 </span><span class="lineCov">      81180 :                                                                                                 u32_label=0;</span>
+<span class="lineNum">     517 </span><span class="lineCov">     162360 :                                                                                                 if ((*(pu8_Message+u32_i)!='\r')&amp;&amp;</span>
+<span class="lineNum">     518 </span><span class="lineCov">     162360 :                                                                                                                 (*(pu8_Message+u32_i)!='\t')&amp;&amp;</span>
+<span class="lineNum">     519 </span><span class="lineCov">      81180 :                                                                                                                 (*(pu8_Message+u32_i)!='\n'))</span>
+<span class="lineNum">     520 </span>            :                                                                                                 {
+<span class="lineNum">     521 </span><span class="lineCov">      59916 :                                                                                                         au8_Label[u32_j]=*(pu8_Message+u32_i);</span>
+<span class="lineNum">     522 </span><span class="lineCov">      59916 :                                                                                                         u32_i++;</span>
+<span class="lineNum">     523 </span><span class="lineCov">      59916 :                                                                                                         u32_j++;</span>
+<span class="lineNum">     524 </span>            :                                                                                                 }
+<span class="lineNum">     525 </span>            :                                                                                                 else
+<span class="lineNum">     526 </span>            :                                                                                                 {
+<span class="lineNum">     527 </span><span class="lineCov">      21264 :                                                                                                         u32_i++;</span>
+<span class="lineNum">     528 </span>            :                                                                                                 }
+<span class="lineNum">     529 </span><span class="lineCov">      81180 :                                                                                                 if (*(pu8_Message+u32_i)!='\t')</span>
+<span class="lineNum">     530 </span>            :                                                                                                 {
+<span class="lineNum">     531 </span>            :                                                                                                         ;
+<span class="lineNum">     532 </span>            :                                                                                                 }
+<span class="lineNum">     533 </span>            :                                                                                                 else
+<span class="lineNum">     534 </span>            :                                                                                                 {
+<span class="lineNum">     535 </span><span class="lineCov">      21228 :                                                                                                         e_BmvReadMode=E_BMV_READ_VALUE;</span>
+<span class="lineNum">     536 </span><span class="lineCov">      80982 :                                                                                                         for (u32_j=0; u32_j&lt;(u32_i-1); u32_j++)</span>
+<span class="lineNum">     537 </span>            :                                                                                                         {
+<span class="lineNum">     538 </span><span class="lineCov">      59754 :                                                                                                                 u32_label=(u32_label&lt;&lt;8)+au8_Label[u32_j];</span>
+<span class="lineNum">     539 </span><span class="lineCov">      59754 :                                                                                                                 au8_RawData[u32_CptRawData++]=au8_Label[u32_j];</span>
+<span class="lineNum">     540 </span>            :                                                                                                         }
+<span class="lineNum">     541 </span>            :                                                                                                 }
+<span class="lineNum">     542 </span>            :                                                                                         }
+<span class="lineNum">     543 </span><span class="lineCov">      81198 :                                                                                         break;</span>
+<span class="lineNum">     544 </span>            :                                         case E_BMV_READ_VALUE :
+<span class="lineNum">     545 </span><span class="lineCov">      21228 :                                                                                         sscanf((const char * volatile)(pu8_Message+u32_i), &quot;%d&quot;, &amp;s32_value);</span>
+<span class="lineNum">     546 </span><span class="lineCov">      21228 :                                                                                         sscanf((const char * volatile)(pu8_Message+u32_i), &quot;%x&quot;, &amp;u32_hexvalue);</span>
+<span class="lineNum">     547 </span><span class="lineCov">      21228 :                                                                                         sscanf((const char * volatile)(pu8_Message+u32_i), &quot;%s&quot;, au8_svalue);</span>
+<span class="lineNum">     548 </span><span class="lineCov">      21228 :                                                                                         t_Receive_Status|=CompleteDataStructure((te_Bmv700_label)u32_label,s32_value,u32_hexvalue,au8_svalue,u32_index_EndOfBlock);</span>
+<span class="lineNum">     549 </span>            : 
+<span class="lineNum">     550 </span><span class="lineCov">      21228 :                                                                                         pu8_Message = (uint8 *)strtok ((char *)NULL,(const char *) &quot;\r&quot;);</span>
+<span class="lineNum">     551 </span><span class="lineCov">      21228 :                                                                                         if (NULL_PTR!=pu8_Message)</span>
+<span class="lineNum">     552 </span>            :                                                                                         {
+<span class="lineNum">     553 </span>            : #ifdef K_DEBUG
+<span class="lineNum">     554 </span>            :                                                                                                 printf (&quot;%s\n&quot;,pu8_Message);
+<span class="lineNum">     555 </span>            : #endif
+<span class="lineNum">     556 </span><span class="lineCov">      21228 :                                                                                                 u32_index_EndOfBlock=u32_index_EndOfBlock%K_FRAME_SIZE_MAX+strlen((const char *)pu8_Message)+1;</span>
+<span class="lineNum">     557 </span><span class="lineCov">      21228 :                                                                                                 u32_DataRead=u32_DataRead+strlen((const char *)pu8_Message)+1;</span>
+<span class="lineNum">     558 </span>            :                                                                                         }
+<span class="lineNum">     559 </span>            :                                                                                         else
+<span class="lineNum">     560 </span>            :                                                                                         {
+<span class="lineNum">     561 </span>            :                                                                                                 ;
+<span class="lineNum">     562 </span>            :                                                                                         }
+<span class="lineNum">     563 </span><span class="lineCov">      21228 :                                                                                         u32_i=0;</span>
+<span class="lineNum">     564 </span><span class="lineCov">      21228 :                                                                                         u32_j=0;</span>
+<span class="lineNum">     565 </span><span class="lineCov">      21228 :                                                                                         e_BmvReadMode=E_BMV_READ_LABEL;</span>
+<span class="lineNum">     566 </span><span class="lineCov">      21228 :                                                                                         break;</span>
+<span class="lineNum">     567 </span>            : 
+<span class="lineNum">     568 </span>            :                                         case E_NO_VALID_VALUE :
+<span class="lineNum">     569 </span>            :                                         default:
+<span class="lineNum">     570 </span><span class="lineNoCov">          0 :                                                                                         t_Receive_Status=E_OK;</span>
+<span class="lineNum">     571 </span><span class="lineNoCov">          0 :                                                                                         break;</span>
+<span class="lineNum">     572 </span>            :                                 }
+<span class="lineNum">     573 </span>            : 
+<span class="lineNum">     574 </span>            :                         }
+<span class="lineNum">     575 </span>            :                 }
+<span class="lineNum">     576 </span>            :         }
+<span class="lineNum">     577 </span>            :         else
+<span class="lineNum">     578 </span>            :         {
+<span class="lineNum">     579 </span>            :                 ;
+<span class="lineNum">     580 </span>            :         }
+<span class="lineNum">     581 </span>            : 
+<span class="lineNum">     582 </span>            :         /* return code */
+<span class="lineNum">     583 </span><span class="lineCov">        600 :         return(t_Receive_Status);</span>
+<span class="lineNum">     584 </span>            : }
+<span class="lineNum">     585 </span>            : 
+<span class="lineNum">     586 </span>            : /**
+<span class="lineNum">     587 </span>            :  * \fn Std_ReturnType CompleteDataStructure(const te_Bmv700_label e_label,const sint32 s32_value)
+<span class="lineNum">     588 </span>            :  * \brief this function will complete data structure
+<span class="lineNum">     589 </span>            :  *
+<span class="lineNum">     590 </span>            :  * \param  &lt;te_Bmv700_label e_label&gt; { Bmv700 label }
+<span class="lineNum">     591 </span>            :  *                      &lt;sint32 s32_value&gt; { Bmv700 label value }
+<span class="lineNum">     592 </span>            :  *
+<span class="lineNum">     593 </span>            : * \return Std_ReturnType :
+<span class="lineNum">     594 </span>            : *         - E_OK if good return function
+<span class="lineNum">     595 </span>            : *         - E_NOT_OK if not
+<a name="596"><span class="lineNum">     596 </span>            :  */</a>
+<span class="lineNum">     597 </span>            : //Std_ReturnType CompleteDataStructure(const te_Bmv700_label e_label,const sint32 s32_value, const uint32 u32_hexvalue, uint32 u32_index_EndOfBlock, uint8 * const pu8_RawData)
+<span class="lineNum">     598 </span><span class="lineCov">      21228 : Std_ReturnType CompleteDataStructure(const te_Bmv700_label e_label,const sint32 s32_value, const uint32 u32_hexvalue, const uint8 * const pu8_svalue, uint32 u32_index_EndOfBlock)</span>
+<span class="lineNum">     599 </span>            : {
+<span class="lineNum">     600 </span>            :     /* Declaration */
+<span class="lineNum">     601 </span>            :         Std_ReturnType t_Complete_Status;
+<span class="lineNum">     602 </span>            : 
+<span class="lineNum">     603 </span>            :     /* Initialization */
+<span class="lineNum">     604 </span><span class="lineCov">      21228 :         t_Complete_Status=E_OK;</span>
+<span class="lineNum">     605 </span>            : 
+<span class="lineNum">     606 </span>            :     /* Function Body */
+<span class="lineNum">     607 </span><span class="lineCov">      21228 :         switch(e_label)</span>
+<span class="lineNum">     608 </span>            :         {
+<span class="lineNum">     609 </span>            :                 case E_BMV_LABEL_V:
+<span class="lineNum">     610 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_Voltage=s32_value;</span>
+<span class="lineNum">     611 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     612 </span>            :                 case E_BMV_LABEL_I:
+<span class="lineNum">     613 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_BatteryCurrent=s32_value;</span>
+<span class="lineNum">     614 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     615 </span>            :                 case E_BMV_LABEL_P:
+<span class="lineNum">     616 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_InstantaneousPower=s32_value;</span>
+<span class="lineNum">     617 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     618 </span>            :                 case E_BMV_LABEL_ALARM:
+<span class="lineNum">     619 </span><span class="lineCov">       1110 :                         memcpy(&amp;gs_Bmv700_Data.au8_AlarmState,pu8_svalue,4);</span>
+<span class="lineNum">     620 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     621 </span>            :                 case E_BMV_LABEL_AR:
+<span class="lineNum">     622 </span><span class="lineCov">        948 :                         gs_Bmv700_Data.s32_AlarmReason=s32_value;</span>
+<span class="lineNum">     623 </span><span class="lineCov">        948 :                         break;</span>
+<span class="lineNum">     624 </span>            :                 case E_BMV_LABEL_BMV:
+<span class="lineNum">     625 </span><span class="lineCov">        948 :                         gs_Bmv700_Data.s32_ModelDescription=s32_value;</span>
+<span class="lineNum">     626 </span><span class="lineCov">        948 :                         break;</span>
+<span class="lineNum">     627 </span>            :                 case E_BMV_LABEL_CE:
+<span class="lineNum">     628 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_ConsumedAmpHours=s32_value;</span>
+<span class="lineNum">     629 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     630 </span>            :                 case E_BMV_LABEL_FW:
+<span class="lineNum">     631 </span><span class="lineCov">        948 :                         gs_Bmv700_Data.s32_FirmwareVersion=s32_value;</span>
+<span class="lineNum">     632 </span><span class="lineCov">        948 :                         break;</span>
+<span class="lineNum">     633 </span>            :                 case E_BMV_LABEL_H1:
+<span class="lineNum">     634 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_DeepestDischargeDepth=s32_value;</span>
+<span class="lineNum">     635 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     636 </span>            :                 case E_BMV_LABEL_H2:
+<span class="lineNum">     637 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_LastDischargeDepth=s32_value;</span>
+<span class="lineNum">     638 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     639 </span>            :                 case E_BMV_LABEL_H3:
+<span class="lineNum">     640 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_AvgDischargeDepth=s32_value;</span>
+<span class="lineNum">     641 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     642 </span>            :                 case E_BMV_LABEL_H4:
+<span class="lineNum">     643 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NumberOfChargeCycles=s32_value;</span>
+<span class="lineNum">     644 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     645 </span>            :                 case E_BMV_LABEL_H5:
+<span class="lineNum">     646 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NumberOfFullDischarges=s32_value;</span>
+<span class="lineNum">     647 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     648 </span>            :                 case E_BMV_LABEL_H6:
+<span class="lineNum">     649 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_CumulativeAmpHoursDrawn=s32_value;</span>
+<span class="lineNum">     650 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     651 </span>            :                 case E_BMV_LABEL_H7:
+<span class="lineNum">     652 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_MiniMainVoltage=s32_value;</span>
+<span class="lineNum">     653 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     654 </span>            :                 case E_BMV_LABEL_H8:
+<span class="lineNum">     655 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_MaxiMainVoltage=s32_value;</span>
+<span class="lineNum">     656 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     657 </span>            :                 case E_BMV_LABEL_H9:
+<span class="lineNum">     658 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NbSecSinceLastFullCharge=s32_value;</span>
+<span class="lineNum">     659 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     660 </span>            :                 case E_BMV_LABEL_H10:
+<span class="lineNum">     661 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NbAutoSynchro=s32_value;</span>
+<span class="lineNum">     662 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     663 </span>            :                 case E_BMV_LABEL_H11:
+<span class="lineNum">     664 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NbLowMainVoltageAlarms=s32_value;</span>
+<span class="lineNum">     665 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     666 </span>            :                 case E_BMV_LABEL_H12:
+<span class="lineNum">     667 </span><span class="lineCov">        516 :                         gs_Bmv700_Data.s32_NbHighMainVoltageAlarms=s32_value;</span>
+<span class="lineNum">     668 </span><span class="lineCov">        516 :                         break;</span>
+<span class="lineNum">     669 </span>            :                 case E_BMV_LABEL_H15:
+<span class="lineNum">     670 </span><span class="lineNoCov">          0 :                         gs_Bmv700_Data.s32_MiniAuxiVoltage=s32_value;</span>
+<span class="lineNum">     671 </span><span class="lineNoCov">          0 :                         break;</span>
+<span class="lineNum">     672 </span>            :                 case E_BMV_LABEL_H16:
+<span class="lineNum">     673 </span><span class="lineNoCov">          0 :                         gs_Bmv700_Data.s32_MaxiAuxiVoltage=s32_value;</span>
+<span class="lineNum">     674 </span><span class="lineNoCov">          0 :                         break;</span>
+<span class="lineNum">     675 </span>            :                 case E_BMV_LABEL_H17:
+<span class="lineNum">     676 </span><span class="lineCov">        678 :                         gs_Bmv700_Data.s32_DischargedEnergyAmount=s32_value;</span>
+<span class="lineNum">     677 </span><span class="lineCov">        678 :                         break;</span>
+<span class="lineNum">     678 </span>            :                 case E_BMV_LABEL_H18:
+<span class="lineNum">     679 </span><span class="lineCov">        678 :                         gs_Bmv700_Data.s32_ChargedEnergyAmount=s32_value;</span>
+<span class="lineNum">     680 </span><span class="lineCov">        678 :                         break;</span>
+<span class="lineNum">     681 </span>            :                 case E_BMV_LABEL_PID:
+<span class="lineNum">     682 </span><span class="lineCov">        768 :                         gs_Bmv700_Data.t_ProductId=u32_hexvalue;</span>
+<span class="lineNum">     683 </span><span class="lineCov">        768 :                         t_Complete_Status|=ComputeChecksum( gau8_GlobalBuffer, gu32_index_StartOfBlock,gu32_index_LastEndOfBlockChecksum,K_FRAME_SIZE_MAX);</span>
+<span class="lineNum">     684 </span><span class="lineCov">        768 :                         gu32_index_StartOfBlock=gu32_index_LastEndOfBlockChecksum;</span>
+<span class="lineNum">     685 </span><span class="lineCov">        768 :                         break;</span>
+<span class="lineNum">     686 </span>            :                 case E_BMV_LABEL_RELAY:
+<span class="lineNum">     687 </span><span class="lineCov">       1110 :                         memcpy(&amp;gs_Bmv700_Data.au8_RelayState,pu8_svalue,4);</span>
+<span class="lineNum">     688 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     689 </span>            :                 case E_BMV_LABEL_SER:
+<span class="lineNum">     690 </span><span class="lineNoCov">          0 :                         break;</span>
+<span class="lineNum">     691 </span>            :                 case E_BMV_LABEL_SOC:
+<span class="lineNum">     692 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_StateOfCharge=s32_value;</span>
+<span class="lineNum">     693 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     694 </span>            :                 case E_BMV_LABEL_TTG:
+<span class="lineNum">     695 </span><span class="lineCov">       1110 :                         gs_Bmv700_Data.s32_TimeToGo=s32_value;</span>
+<span class="lineNum">     696 </span><span class="lineCov">       1110 :                         break;</span>
+<span class="lineNum">     697 </span>            :                 case E_BMV_LABEL_CHECKSUM:
+<span class="lineNum">     698 </span><span class="lineCov">       1188 :                         gu32_index_LastEndOfBlockChecksum=u32_index_EndOfBlock;</span>
+<span class="lineNum">     699 </span><span class="lineCov">       1188 :                         break;</span>
+<span class="lineNum">     700 </span>            :                 case E_BMV_LABEL_H13:
+<span class="lineNum">     701 </span>            :                 case E_BMV_LABEL_H14:
+<span class="lineNum">     702 </span>            :                 case E_BMV_LABEL_H19:
+<span class="lineNum">     703 </span>            :                 case E_BMV_LABEL_H20:
+<span class="lineNum">     704 </span>            :                 case E_BMV_LABEL_H21:
+<span class="lineNum">     705 </span>            :                 case E_BMV_LABEL_H22:
+<span class="lineNum">     706 </span>            :                 case E_BMV_LABEL_H23:
+<span class="lineNum">     707 </span>            :                 case E_BMV_LABEL_HSDS:
+<span class="lineNum">     708 </span>            :                 case E_BMV_LABEL_CS:
+<span class="lineNum">     709 </span>            :                 case E_BMV_LABEL_ERR:
+<span class="lineNum">     710 </span>            :                 default :
+<span class="lineNum">     711 </span><span class="lineNoCov">          0 :                         break;</span>
+<span class="lineNum">     712 </span>            :         }
+<span class="lineNum">     713 </span>            : 
+<span class="lineNum">     714 </span>            :     /* return code */
+<span class="lineNum">     715 </span><span class="lineCov">      21228 :     return(t_Complete_Status);</span>
+<span class="lineNum">     716 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
