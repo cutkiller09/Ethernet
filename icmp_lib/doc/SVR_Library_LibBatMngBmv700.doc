@@ -1,0 +1,365 @@
+Integration Test result :
+
+
+Case 0 : \************ Module not initialized ************\ 
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+
+Case 1 : \************ Module not configured ************\ 
+Case 1 : tested_value = 0 (expected : 0) : SUCCESS
+Case 1 : tested_value = 1 (expected : 1) : SUCCESS
+Case 1 : tested_value = 1 (expected : 1) : SUCCESS
+Case 1 : tested_value = 1 (expected : 1) : SUCCESS
+Case 1 : tested_value = 1 (expected : 1) : SUCCESS
+
+Case 2 : \************ Nominal Test ************\ 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 1 (expected : 1) : SUCCESS
+Case 2 : tested_value = 1 (expected : 1) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 1 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 2 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 3 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 4 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 5 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 6 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 7 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 8 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 9 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 10 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 11 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 12 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 13 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 14 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 15 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 16 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 17 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 18 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 19 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 20 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 21 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 22 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 23 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 24 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 25 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 26 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 27 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 28 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 29 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 30 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 31 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 32 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 33 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 34 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 35 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 36 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 37 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 38 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 39 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 40 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 41 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 42 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 43 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 44 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 45 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 46 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 47 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 48 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 49 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 50 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 51 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 52 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 53 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 54 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 55 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 56 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 57 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 58 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 59 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 60 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 61 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 62 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 63 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 64 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 65 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 66 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 67 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 68 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 69 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 70 time 
+Case 2 : tested_value = 1 (expected : 0) : FAILED
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 71 time 
+Case 2 : tested_value = 1 (expected : 0) : FAILED
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 72 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 73 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 74 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 75 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 76 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 77 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 78 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 79 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 80 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 81 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 82 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 83 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 84 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 85 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 86 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 87 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 88 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 89 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 90 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 91 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 92 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 93 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 94 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 95 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 96 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 97 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 98 time 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+LibBatMngBmv700_Manage well called 99 time 
+LibBatMngBmv700_Manage well called 100 per cents 
+LibBatMngBmv700_Manage bad called 0 per cents 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+
+
+
+
+Validation Test result :
+
+LibBatMngBmv700_Initialize well Initialized 0 
+LibBatMngBmv700_Configure well configured 0 
+LibBatMngBmv700_Open well Initialized 0 
+LibBatMngBmv700_Manage well called 0 time 
+LibBatMngBmv700_Manage well called 1 time 
+LibBatMngBmv700_Manage well called 2 time 
+LibBatMngBmv700_Manage well called 3 time 
+LibBatMngBmv700_Manage well called 4 time 
+LibBatMngBmv700_Manage well called 5 time 
+LibBatMngBmv700_Manage well called 6 time 
+LibBatMngBmv700_Manage well called 7 time 
+LibBatMngBmv700_Manage well called 8 time 
+LibBatMngBmv700_Manage well called 9 time 
+LibBatMngBmv700_Manage well called 10 time 
+LibBatMngBmv700_Manage well called 11 time 
+LibBatMngBmv700_Manage well called 12 time 
+LibBatMngBmv700_Manage well called 13 time 
+LibBatMngBmv700_Manage well called 14 time 
+LibBatMngBmv700_Manage well called 15 time 
+LibBatMngBmv700_Manage well called 16 time 
+LibBatMngBmv700_Manage well called 17 time 
+LibBatMngBmv700_Manage well called 18 time 
+LibBatMngBmv700_Manage well called 19 time 
+LibBatMngBmv700_Manage well called 20 time 
+LibBatMngBmv700_Manage well called 21 time 
+LibBatMngBmv700_Manage well called 22 time 
+LibBatMngBmv700_Manage well called 23 time 
+LibBatMngBmv700_Manage well called 24 time 
+LibBatMngBmv700_Manage well called 25 time 
+LibBatMngBmv700_Manage well called 26 time 
+LibBatMngBmv700_Manage well called 27 time 
+LibBatMngBmv700_Manage well called 28 time 
+LibBatMngBmv700_Manage well called 29 time 
+LibBatMngBmv700_Manage well called 30 time 
+LibBatMngBmv700_Manage well called 31 time 
+LibBatMngBmv700_Manage well called 32 time 
+LibBatMngBmv700_Manage well called 33 time 
+LibBatMngBmv700_Manage well called 34 time 
+LibBatMngBmv700_Manage well called 35 time 
+LibBatMngBmv700_Manage well called 36 time 
+LibBatMngBmv700_Manage well called 37 time 
+LibBatMngBmv700_Manage well called 38 time 
+LibBatMngBmv700_Manage well called 39 time 
+LibBatMngBmv700_Manage well called 40 time 
+LibBatMngBmv700_Manage well called 41 time 
+LibBatMngBmv700_Manage well called 42 time 
+LibBatMngBmv700_Manage well called 43 time 
+LibBatMngBmv700_Manage well called 44 time 
+LibBatMngBmv700_Manage well called 45 time 
+LibBatMngBmv700_Manage well called 46 time 
+LibBatMngBmv700_Manage well called 47 time 
+LibBatMngBmv700_Manage well called 48 time 
+LibBatMngBmv700_Manage well called 49 time 
+LibBatMngBmv700_Manage well called 50 time 
+LibBatMngBmv700_Manage well called 51 time 
+LibBatMngBmv700_Manage well called 52 time 
+LibBatMngBmv700_Manage well called 53 time 
+LibBatMngBmv700_Manage well called 54 time 
+LibBatMngBmv700_Manage well called 55 time 
+LibBatMngBmv700_Manage well called 56 time 
+LibBatMngBmv700_Manage well called 57 time 
+LibBatMngBmv700_Manage well called 58 time 
+LibBatMngBmv700_Manage well called 59 time 
+LibBatMngBmv700_Manage well called 60 time 
+LibBatMngBmv700_Manage well called 61 time 
+LibBatMngBmv700_Manage well called 62 time 
+LibBatMngBmv700_Manage well called 63 time 
+LibBatMngBmv700_Manage well called 64 time 
+LibBatMngBmv700_Manage well called 65 time 
+LibBatMngBmv700_Manage well called 66 time 
+LibBatMngBmv700_Manage well called 67 time 
+LibBatMngBmv700_Manage well called 68 time 
+LibBatMngBmv700_Manage well called 69 time 
+LibBatMngBmv700_Manage well called 70 time 
+LibBatMngBmv700_Manage well called 71 time 
+LibBatMngBmv700_Manage well called 72 time 
+LibBatMngBmv700_Manage well called 73 time 
+LibBatMngBmv700_Manage well called 74 time 
+LibBatMngBmv700_Manage well called 75 time 
+LibBatMngBmv700_Manage well called 76 time 
+LibBatMngBmv700_Manage well called 77 time 
+LibBatMngBmv700_Manage well called 78 time 
+LibBatMngBmv700_Manage well called 79 time 
+LibBatMngBmv700_Manage well called 80 time 
+LibBatMngBmv700_Manage well called 81 time 
+LibBatMngBmv700_Manage well called 82 time 
+LibBatMngBmv700_Manage well called 83 time 
+LibBatMngBmv700_Manage well called 84 time 
+LibBatMngBmv700_Manage well called 85 time 
+LibBatMngBmv700_Manage well called 86 time 
+LibBatMngBmv700_Manage well called 87 time 
+LibBatMngBmv700_Manage well called 88 time 
+LibBatMngBmv700_Manage well called 89 time 
+LibBatMngBmv700_Manage well called 90 time 
+LibBatMngBmv700_Manage well called 91 time 
+LibBatMngBmv700_Manage well called 92 time 
+LibBatMngBmv700_Manage well called 93 time 
+LibBatMngBmv700_Manage well called 94 time 
+LibBatMngBmv700_Manage well called 95 time 
+LibBatMngBmv700_Manage well called 96 time 
+LibBatMngBmv700_Manage well called 97 time 
+LibBatMngBmv700_Manage well called 98 time 
+LibBatMngBmv700_Manage well called 99 time 
+LibBatMngBmv700_Manage well called 100 per cents 
+LibBatMngBmv700_Manage bad called 0 per cents 
+LibBatMngBmv700_Close well called 0 

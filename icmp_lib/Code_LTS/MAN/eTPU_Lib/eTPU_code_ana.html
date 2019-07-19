@@ -1,0 +1,954 @@
+<html>
+<head>
+<title>Analyes File: eTPU_code</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<style id="Resource Dependency Analyses_18854_Styles">
+.Normal       {                     font-size:11.0pt;  text-align: center;}
+.NormalLeft   {                     font-size:11.0pt;  text-align: left;}
+.LightGrey    { background:#DDDDDD; font-size:11.0pt;  text-align: center;}
+.LightBlue    { background:#E0FFFF; font-size:11.0pt;  text-align: left;}
+.MediumBlue   { background:#C0E8F0; font-size:11.0pt;  text-align: center;}
+.LightGreen   { background:#00CC00; font-size:11.0pt;  text-align: center;}
+.Yellow       { background:#FFFF00; font-size:12.0pt;  text-align: center;}
+.LightRed     { background:#FFC0D0; font-size:11.0pt;  text-align: center;}
+.LightRedLeft { background:#FFC0D0; font-size:11.0pt;  text-align: left;}
+.LightYellow  { background:#FFFF99; font-size:11.0pt;  text-align: center;}
+.VagueRed     { background:#FFF0E0; font-size:11.0pt;  text-align: center;}
+.Purple       { background:#FFC0F0; font-size:11.0pt;  text-align: center;}
+.Busy         { background:#FFFF99; font-size:11.0pt; text-align: center;}
+.Arc          { background:#CCCCCC; font-size:11.0pt; text-align: center;}
+.Node         { background:#33FF33; font-size:11.0pt; text-align: center;}
+.Unused       { background:#FF7777; font-size:11.0pt; text-align: center;}
+.ChangedCode  { background:#FFE8F4; font-size:8.5pt; text-align: center;}
+.tiny             {                     font-size:8.5pt;  text-align: center; color: lime; }
+.TableTitle     { background:#FFFFFF; font-size:12.0pt; text-align: center; color: black; font-weight: bold; }
+.TableH1C1      { background:#FFFF00; font-size:12.0pt; text-align: left;}
+.TableH1Cn      { background:#FFFF00; font-size:12.0pt; text-align: center; color: black; font-weight: bold; }
+.TableH2C1      { background:#F0F0F8; font-size:11.0pt; text-align: left;}
+.TableH2Cn      { background:#F0F0F8; font-size:12.0pt; text-align: center; color: black; font-weight: bold; }
+.TableBodyC1    {                     font-size:11.0pt; text-align: left;}
+.TableBodyCn    {                     font-size:11.0pt; text-align: center;}
+.TableBodyWcC1  {                     font-size:12.0pt; text-align: left; color: red; font-weight: bold; }
+.TableBodyWcCn  {                     font-size:12.0pt; text-align: center; color: red; font-weight: bold; }
+</style>
+
+<body bgcolor="#FFFFFF">
+
+<small><p> Created on 2019-05-23, 16:38:09.238</p></small>
+
+<h3>Worst Case Thread Lengths</h3>
+<blockquote>
+<table border=1 cellpadding=0 cellspacing=0>
+
+	<col width=400 align=left>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<tr>
+		<td  class=TableTitle>Thead/Function</td>
+		<td  class=TableTitle>Steps</td>
+		<td  class=TableTitle>Ram Accesses</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_A429_ReceiveMaster  <!-- 0 --></td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Init_Rx  <!-- 1 --></td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Label_Rx_M  <!-- 2 --></td>
+		<td  class=TableBodyCn>11</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Data_Bit_Rx_M  <!-- 3 --></td>
+		<td  class=TableBodyCn>11</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Parity_Rx_M  <!-- 4 --></td>
+		<td  class=TableBodyCn>15</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Filter_Rx  <!-- 5 --></td>
+		<td  class=TableBodyWcCn>20</td>
+		<td  class=TableBodyWcCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Save  <!-- 6 --></td>
+		<td  class=TableBodyCn>14</td>
+		<td  class=TableBodyCn>7</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::New_Rx  <!-- 7 --></td>
+		<td  class=TableBodyCn>10</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Noise_M  <!-- 8 --></td>
+		<td  class=TableBodyCn>5</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveMaster::Error_Rx_M  <!-- 9 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_A429_ReceiveSlave  <!-- 10 --></td>
+		<td  class=TableH1Cn>17</td>
+		<td  class=TableH1Cn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveSlave::Label_Rx_S  <!-- 11 --></td>
+		<td  class=TableBodyCn>7</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveSlave::Data_Rx_S  <!-- 12 --></td>
+		<td  class=TableBodyCn>10</td>
+		<td  class=TableBodyCn>3</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveSlave::Parity_Rx_S  <!-- 13 --></td>
+		<td  class=TableBodyWcCn>17</td>
+		<td  class=TableBodyWcCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveSlave::Noise_S  <!-- 14 --></td>
+		<td  class=TableBodyCn>8</td>
+		<td  class=TableBodyCn>3</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_ReceiveSlave::Error_Rx_S  <!-- 15 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_A429_TransmitMaster  <!-- 16 --></td>
+		<td  class=TableH1Cn>19</td>
+		<td  class=TableH1Cn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Init_Tx  <!-- 17 --></td>
+		<td  class=TableBodyCn>7</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::New_Tx  <!-- 18 --></td>
+		<td  class=TableBodyCn>15</td>
+		<td  class=TableBodyCn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::First_Bit  <!-- 19 --></td>
+		<td  class=TableBodyCn>13</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Label_Tx_M  <!-- 20 --></td>
+		<td  class=TableBodyWcCn>19</td>
+		<td  class=TableBodyWcCn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Data_Tx_M  <!-- 21 --></td>
+		<td  class=TableBodyWcCn>19</td>
+		<td  class=TableBodyWcCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Parity_Tx_M  <!-- 22 --></td>
+		<td  class=TableBodyCn>11</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Silence_M  <!-- 23 --></td>
+		<td  class=TableBodyCn>16</td>
+		<td  class=TableBodyCn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitMaster::Error_Tx_M  <!-- 24 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_A429_TransmitSlave  <!-- 25 --></td>
+		<td  class=TableH1Cn>20</td>
+		<td  class=TableH1Cn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitSlave::Label_Tx_S  <!-- 26 --></td>
+		<td  class=TableBodyWcCn>20</td>
+		<td  class=TableBodyWcCn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitSlave::Data_Tx_S  <!-- 27 --></td>
+		<td  class=TableBodyCn>18</td>
+		<td  class=TableBodyCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitSlave::Parity_Tx_S  <!-- 28 --></td>
+		<td  class=TableBodyCn>11</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitSlave::Silence_S  <!-- 29 --></td>
+		<td  class=TableBodyCn>18</td>
+		<td  class=TableBodyCn>6</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_A429_TransmitSlave::Error_Tx_S  <!-- 30 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_Leak_ReferencePin  <!-- 31 --></td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ReferencePin::Init_Leak  <!-- 32 --></td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ReferencePin::Setup_Pins  <!-- 33 --></td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ReferencePin::Mux0_Rdy  <!-- 34 --></td>
+		<td  class=TableBodyWcCn>10</td>
+		<td  class=TableBodyWcCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ReferencePin::Error_Leak_Reference  <!-- 35 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_Leak_MuxPin  <!-- 36 --></td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_MuxPin::Mux_Rdy  <!-- 37 --></td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_MuxPin::Error_Leak_Mux  <!-- 38 --></td>
+		<td  class=TableBodyWcCn>2</td>
+		<td  class=TableBodyWcCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_Leak_ConvStartPin  <!-- 39 --></td>
+		<td  class=TableH1Cn>13</td>
+		<td  class=TableH1Cn>7</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ConvStartPin::Pulse_Start  <!-- 40 --></td>
+		<td  class=TableBodyCn>8</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ConvStartPin::Pulse_End  <!-- 41 --></td>
+		<td  class=TableBodyWcCn>13</td>
+		<td  class=TableBodyWcCn>7</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ConvStartPin::Set_Interrupt  <!-- 42 --></td>
+		<td  class=TableBodyCn>7</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_ConvStartPin::Error_Leak_ConvStart  <!-- 43 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_Leak_Clock  <!-- 44 --></td>
+		<td  class=TableH1Cn>11</td>
+		<td  class=TableH1Cn>3</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_Clock::Next_Period  <!-- 45 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_Clock::Acq_Ready  <!-- 46 --></td>
+		<td  class=TableBodyCn>3</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_Clock::Negative_Acq  <!-- 47 --></td>
+		<td  class=TableBodyWcCn>11</td>
+		<td  class=TableBodyWcCn>3</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_Clock::Positive_Acq  <!-- 48 --></td>
+		<td  class=TableBodyWcCn>11</td>
+		<td  class=TableBodyWcCn>3</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_Clock::Error_Leak_Clock  <!-- 49 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_Leak_TestPin  <!-- 50 --></td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+		<td  class=TableH1Cn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_TestPin::Test_Idle  <!-- 51 --></td>
+		<td  class=TableBodyWcCn>2</td>
+		<td  class=TableBodyWcCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_TestPin::Test_Rdy  <!-- 52 --></td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+		<td  class=TableBodyCn>cna<br />loop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_Leak_TestPin::Error_Leak_Test  <!-- 53 --></td>
+		<td  class=TableBodyWcCn>2</td>
+		<td  class=TableBodyWcCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_QD  <!-- 54 --></td>
+		<td  class=TableH1Cn>134</td>
+		<td  class=TableH1Cn>48</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QD::QD_Init &nbsp;&nbsp;&nbsp;<b>[excluded]</b> <!-- 55 --></td>
+		<td  class=TableBodyCn>15</td>
+		<td  class=TableBodyCn>4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QD::QD_SlowNormalModeFallingEdge  <!-- 56 --></td>
+		<td  class=TableBodyWcCn>134</td>
+		<td  class=TableBodyWcCn>48</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QD::QD_SlowNormalModeRisingEdge  <!-- 57 --></td>
+		<td  class=TableBodyWcCn>134</td>
+		<td  class=TableBodyWcCn>48</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QD::QD_FastMode  <!-- 58 --></td>
+		<td  class=TableBodyCn>109</td>
+		<td  class=TableBodyCn>44</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QD::QD_Error  <!-- 59 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_QOM  <!-- 60 --></td>
+		<td  class=TableH1Cn>31</td>
+		<td  class=TableH1Cn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_init_high_immediate  <!-- 61 --></td>
+		<td  class=TableBodyWcCn>31</td>
+		<td  class=TableBodyWcCn>10</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_init_low_immediate  <!-- 62 --></td>
+		<td  class=TableBodyWcCn>31</td>
+		<td  class=TableBodyWcCn>10</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_init_high_referenced  <!-- 63 --></td>
+		<td  class=TableBodyWcCn>31</td>
+		<td  class=TableBodyWcCn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_init_low_referenced  <!-- 64 --></td>
+		<td  class=TableBodyWcCn>31</td>
+		<td  class=TableBodyWcCn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_next_event  <!-- 65 --></td>
+		<td  class=TableBodyCn>24</td>
+		<td  class=TableBodyCn>8</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM::QOM_last_event  <!-- 66 --></td>
+		<td  class=TableBodyCn>4</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_QOM_ThreadEntry_0  <!-- 67 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_SPWM_Master  <!-- 68 --></td>
+		<td  class=TableH1Cn>22</td>
+		<td  class=TableH1Cn>10</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Master::SPWM_Init_Master  <!-- 69 --></td>
+		<td  class=TableBodyCn>8</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Master::SPWM_Start_Master  <!-- 70 --></td>
+		<td  class=TableBodyWcCn>22</td>
+		<td  class=TableBodyWcCn>10</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Master::SPWM_Stop_Master  <!-- 71 --></td>
+		<td  class=TableBodyCn>13</td>
+		<td  class=TableBodyCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Master::SPWM_Manage_Master  <!-- 72 --></td>
+		<td  class=TableBodyCn>5</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Master::SPWM_Error_Master  <!-- 73 --></td>
+		<td  class=TableBodyCn>3</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_SPWM_Slave  <!-- 74 --></td>
+		<td  class=TableH1Cn>9</td>
+		<td  class=TableH1Cn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Slave::SPWM_Init_Slave  <!-- 75 --></td>
+		<td  class=TableBodyWcCn>9</td>
+		<td  class=TableBodyWcCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Slave::SPWM_Start_Slave  <!-- 76 --></td>
+		<td  class=TableBodyWcCn>9</td>
+		<td  class=TableBodyWcCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Slave::SPWM_Stop_Slave  <!-- 77 --></td>
+		<td  class=TableBodyCn>3</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Slave::SPWM_Manage_Slave  <!-- 78 --></td>
+		<td  class=TableBodyCn>4</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_SPWM_Slave::SPWM_Error_Slave  <!-- 79 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_StepperMotor3PH  <!-- 80 --></td>
+		<td  class=TableH1Cn>59</td>
+		<td  class=TableH1Cn>21</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH::STMC_INIT_REQ &nbsp;&nbsp;&nbsp;<b>[excluded]</b> <!-- 81 --></td>
+		<td  class=TableBodyCn>57</td>
+		<td  class=TableBodyCn>25</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH::STMC_HOLD_REQ  <!-- 82 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH_ThreadEntry_3  <!-- 83 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH::STMC_OPEN_DIR  <!-- 84 --></td>
+		<td  class=TableBodyWcCn>59</td>
+		<td  class=TableBodyWcCn>21</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH::STMC_CLOSE_DIR  <!-- 85 --></td>
+		<td  class=TableBodyCn>57</td>
+		<td  class=TableBodyCn>20</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor3PH::STMC_ErrHdl  <!-- 86 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_StepperMotor2PH  <!-- 87 --></td>
+		<td  class=TableH1Cn>38</td>
+		<td  class=TableH1Cn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH::STMC_INIT_REQ &nbsp;&nbsp;&nbsp;<b>[excluded]</b> <!-- 88 --></td>
+		<td  class=TableBodyCn>23</td>
+		<td  class=TableBodyCn>7</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH_ThreadEntry_3  <!-- 89 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH::STMC_OPEN_DIR  <!-- 90 --></td>
+		<td  class=TableBodyCn>37</td>
+		<td  class=TableBodyCn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH::STMC_CLOSE_DIR  <!-- 91 --></td>
+		<td  class=TableBodyWcCn>38</td>
+		<td  class=TableBodyWcCn>11</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH_ThreadEntry_4  <!-- 92 --></td>
+		<td  class=TableBodyCn>14</td>
+		<td  class=TableBodyCn>5</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotor2PH::STMC_ErrHdl  <!-- 93 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_StepperMotorFC  <!-- 94 --></td>
+		<td  class=TableH1Cn>5</td>
+		<td  class=TableH1Cn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotorFC::STFC_INIT &nbsp;&nbsp;&nbsp;<b>[excluded]</b> <!-- 95 --></td>
+		<td  class=TableBodyCn>4</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotorFC::STFC_TRANS  <!-- 96 --></td>
+		<td  class=TableBodyCn>3</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotorFC::STFC_START_EVAL  <!-- 97 --></td>
+		<td  class=TableBodyCn>2</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotorFC::STFC_END_EVAL  <!-- 98 --></td>
+		<td  class=TableBodyWcCn>5</td>
+		<td  class=TableBodyWcCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_StepperMotorFC::STFC_ErrHdl  <!-- 99 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableH1C1>eTPU_TIMER  <!-- 100 --></td>
+		<td  class=TableH1Cn>10</td>
+		<td  class=TableH1Cn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyWcC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_TIMER::TIMER_start  <!-- 101 --></td>
+		<td  class=TableBodyWcCn>10</td>
+		<td  class=TableBodyWcCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_TIMER::TIMER_stop  <!-- 102 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>1</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_TIMER::TIMER_end  <!-- 103 --></td>
+		<td  class=TableBodyCn>7</td>
+		<td  class=TableBodyCn>2</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eTPU_TIMER_ThreadEntry_0  <!-- 104 --></td>
+		<td  class=TableBodyCn>1</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+</table>
+
+</blockquote>
+<div style="page-break-after:always;"> </div>
+
+
+<small><p>Note: worst case data marked as 'cna' could not be analyzed.  See the ETEC documentation for an explanation.</p></small>
+
+
+<small><p>Note: [excluded] is used to denote threads that are excluded from a class's and entry table's WCTL.</p></small>
+
+<h3>Worst Case Latency</h3>
+<blockquote>
+<table border=1 cellpadding=0 cellspacing=0>
+
+	<col width=400 align=left>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<tr>
+		<td  class=TableTitle>Channel/Function</td>
+		<td  class=TableTitle>Priority</td>
+		<td  class=TableTitle>WCTL*</td>
+		<td  class=TableTitle>Max WCL</td>
+		<td  class=TableTitle>Actual WCL</td>
+	</tr>
+
+</table>
+
+</blockquote>
+<div style="page-break-after:always;"> </div>
+
+
+<small><p>Note: No System Configuration file was loaded (see -sysConfig=&ltFileName&gt)</p></small>
+
+<h3>Source Code File Information</h3>
+<blockquote>
+<table border=1 cellpadding=0 cellspacing=0>
+
+	<col width=400 align=left>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<tr>
+		<td  class=TableTitle>File</td>
+		<td  class=TableTitle>Opcodes</td>
+		<td  class=TableTitle>Code Size (bytes)</td>
+		<td  class=TableTitle>Start</td>
+		<td  class=TableTitle>Stop</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak.c</td>
+		<td  class=TableBodyCn>271</td>
+		<td  class=TableBodyCn>1084</td>
+		<td  class=TableBodyCn>0xDE0</td>
+		<td  class=TableBodyCn>0x1218</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_ST_MOT_3PH.c</td>
+		<td  class=TableBodyCn>256</td>
+		<td  class=TableBodyCn>1024</td>
+		<td  class=TableBodyCn>0x196C</td>
+		<td  class=TableBodyCn>0x1D68</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_QD.c</td>
+		<td  class=TableBodyCn>218</td>
+		<td  class=TableBodyCn>872</td>
+		<td  class=TableBodyCn>0x121C</td>
+		<td  class=TableBodyCn>0x1580</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_Transmit.c</td>
+		<td  class=TableBodyCn>197</td>
+		<td  class=TableBodyCn>788</td>
+		<td  class=TableBodyCn>0xACC</td>
+		<td  class=TableBodyCn>0xDDC</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_Receive.c</td>
+		<td  class=TableBodyCn>179</td>
+		<td  class=TableBodyCn>716</td>
+		<td  class=TableBodyCn>0x800</td>
+		<td  class=TableBodyCn>0xAC8</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_QOM.c</td>
+		<td  class=TableBodyCn>169</td>
+		<td  class=TableBodyCn>676</td>
+		<td  class=TableBodyCn>0x1584</td>
+		<td  class=TableBodyCn>0x1824</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_ST_MOT_2PH.c</td>
+		<td  class=TableBodyCn>119</td>
+		<td  class=TableBodyCn>476</td>
+		<td  class=TableBodyCn>0x1D6C</td>
+		<td  class=TableBodyCn>0x1F44</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_SPWM.c</td>
+		<td  class=TableBodyCn>81</td>
+		<td  class=TableBodyCn>324</td>
+		<td  class=TableBodyCn>0x1828</td>
+		<td  class=TableBodyCn>0x1968</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Timer.c</td>
+		<td  class=TableBodyCn>21</td>
+		<td  class=TableBodyCn>84</td>
+		<td  class=TableBodyCn>0x1F84</td>
+		<td  class=TableBodyCn>0x1FD4</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_ST_MOT_FC.c</td>
+		<td  class=TableBodyCn>15</td>
+		<td  class=TableBodyCn>60</td>
+		<td  class=TableBodyCn>0x1F48</td>
+		<td  class=TableBodyCn>0x1F80</td>
+	</tr>
+
+	<tr>
+		<td  class=TableTitle>TOTAL</td>
+		<td  class=TableTitle>1526</td>
+		<td  class=TableTitle>6104</td>
+		<td  class=TableTitle>0x800</td>
+		<td  class=TableTitle>0x1FD4</td>
+	</tr>
+
+</table>
+
+</blockquote>
+<div style="page-break-after:always;"> </div>
+
+
+<small><p>Note:  The entry table is not included in the 'Code Size' column.</p></small>
+
+<h3>Call Tree (max stack is 0 bytes)</h3>
+<blockquote>
+<table border=1 cellpadding=0 cellspacing=0>
+
+	<col width=400 align=left>
+	<col width=75 align=center>
+	<col width=75 align=center>
+	<tr>
+		<td  class=TableTitle>Thead/Function</td>
+		<td  class=TableTitle>Stack for Locals and Calls</td>
+		<td  class=TableTitle>Max. Stack Depth</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_ReceiveMaster <!-- 105 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_ReceiveSlave <!-- 115 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_TransmitMaster <!-- 121 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_A429_TransmitSlave <!-- 130 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak_ReferencePin <!-- 136 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak_MuxPin <!-- 141 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak_ConvStartPin <!-- 144 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak_Clock <!-- 149 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_Leak_TestPin <!-- 155 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_QD <!-- 159 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_QOM <!-- 165 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_SPWM_Master <!-- 173 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_SPWM_Slave <!-- 179 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_StepperMotor3PH <!-- 185 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_StepperMotor2PH <!-- 192 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_StepperMotorFC <!-- 199 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+	<tr>
+		<td  class=TableBodyC1>eTPU_TIMER <!-- 205 --></td>
+		<td  class=TableBodyCn>0</td>
+		<td  class=TableBodyCn>0</td>
+	</tr>
+
+</table>
+
+</blockquote>
+<div style="page-break-after:always;"> </div>
+
+</body>
+</html>

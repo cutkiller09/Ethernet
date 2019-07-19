@@ -1,0 +1,406 @@
+Memory Configuration
+
+Name                Origin    Length      Attributes
+SCM                 0x0000    0x4000      x--
+SDM                 0x0000    0x0400      -rw
+
+
+.entry (SCM)
+
+                    Origin    Length (byte,word)  Name
+etpu_func_00        0x0000    0x0040,   64        eTPU_A429_ReceiveMaster (object/..\eTPU_A429_Receive.c)
+etpu_func_01        0x0040    0x0040,   64        eTPU_A429_ReceiveSlave (object/..\eTPU_A429_Receive.c)
+etpu_func_02        0x0080    0x0040,   64        eTPU_A429_TransmitMaster (object/..\eTPU_A429_Transmit.c)
+etpu_func_03        0x00c0    0x0040,   64        eTPU_A429_TransmitSlave (object/..\eTPU_A429_Transmit.c)
+etpu_func_04        0x0100    0x0040,   64        eTPU_Leak_ReferencePin (object/..\eTPU_Leak.c)
+etpu_func_05        0x0140    0x0040,   64        eTPU_Leak_MuxPin (object/..\eTPU_Leak.c)
+etpu_func_06        0x0180    0x0040,   64        eTPU_Leak_ConvStartPin (object/..\eTPU_Leak.c)
+etpu_func_07        0x01c0    0x0040,   64        eTPU_Leak_Clock (object/..\eTPU_Leak.c)
+etpu_func_08        0x0200    0x0040,   64        eTPU_Leak_TestPin (object/..\eTPU_Leak.c)
+etpu_func_09        0x0240    0x0040,   64        eTPU_SPWM_Master (object/..\eTPU_SPWM.c)
+etpu_func_10        0x0280    0x0040,   64        eTPU_SPWM_Slave (object/..\eTPU_SPWM.c)
+etpu_func_11        0x02c0    0x0040,   64        eTPU_QOM (object/..\eTPU_QOM.c)
+etpu_func_13        0x0340    0x0040,   64        eTPU_TIMER (object/..\eTPU_Timer.c)
+etpu_func_15        0x03c0    0x0040,   64        eTPU_StepperMotor2PH (object/..\eTPU_ST_MOT_2PH.c)
+etpu_func_21        0x0540    0x0040,   64        eTPU_StepperMotor3PH (object/..\eTPU_ST_MOT_3PH.c)
+etpu_func_22        0x0580    0x0040,   64        eTPU_StepperMotorFC (object/..\eTPU_ST_MOT_FC.c)
+etpu_func_23        0x05c0    0x0040,   64        eTPU_QD (object/..\eTPU_QD.c)
+
+
+.text (SCM)
+
+                    Origin    Length (byte,word)  Name
+                    0x0800    0x02cc,  179        object/eTPU_A429_Receive.o
+etpu_thread         0x0800    0x01f0,  124            eTPU_A429_ReceiveMaster
+etpu_thread         0x09f0    0x00dc,   55            eTPU_A429_ReceiveSlave
+label               0x0800                                Init_Rx
+label               0x084c                                Label_Rx_M
+label               0x0878                                Data_Bit_Rx_M
+label               0x08a4                                Parity_Rx_M
+label               0x0908                                Filter_Rx
+label               0x0964                                Save
+label               0x09ac                                New_Rx
+label               0x09d4                                Noise_M
+label               0x09e8                                Error_Rx_M
+label               0x09f0                                Label_Rx_S
+label               0x0a0c                                Data_Rx_S
+label               0x0a34                                Parity_Rx_S
+label               0x0aa4                                Noise_S
+label               0x0ac4                                Error_Rx_S
+                    0x0acc    0x0314,  197        object/eTPU_A429_Transmit.o
+etpu_thread         0x0acc    0x01d8,  118            eTPU_A429_TransmitMaster
+etpu_thread         0x0ca4    0x013c,   79            eTPU_A429_TransmitSlave
+label               0x0acc                                Init_Tx
+label               0x0ae8                                New_Tx
+label               0x0b2c                                First_Bit
+label               0x0b74                                Label_Tx_M
+label               0x0bcc                                Data_Tx_M
+label               0x0c24                                Parity_Tx_M
+label               0x0c5c                                Silence_M
+label               0x0c9c                                Error_Tx_M
+label               0x0ca4                                Label_Tx_S
+label               0x0d00                                Data_Tx_S
+label               0x0d54                                Parity_Tx_S
+label               0x0d90                                Silence_S
+label               0x0dd8                                Error_Tx_S
+                    0x0de0    0x043c,  271        object/eTPU_Leak.o
+etpu_thread         0x0de0    0x0290,  164            eTPU_Leak_ReferencePin
+etpu_thread         0x1070    0x0058,   22            eTPU_Leak_MuxPin
+etpu_thread         0x10c8    0x0078,   30            eTPU_Leak_ConvStartPin
+etpu_thread         0x1140    0x007c,   31            eTPU_Leak_Clock
+etpu_thread         0x11bc    0x0060,   24            eTPU_Leak_TestPin
+label               0x0de0                                Init_Leak
+label               0x0f3c                                Setup_Pins
+label               0x1040                                Mux0_Rdy
+label               0x1068                                Error_Leak_Reference
+label               0x1070                                Mux_Rdy
+label               0x10c0                                Error_Leak_Mux
+label               0x10c8                                Pulse_Start
+label               0x10e8                                Pulse_End
+label               0x111c                                Set_Interrupt
+label               0x1138                                Error_Leak_ConvStart
+label               0x1140                                Next_Period
+label               0x1148                                Acq_Ready
+label               0x1154                                Negative_Acq
+label               0x1184                                Positive_Acq
+label               0x11b4                                Error_Leak_Clock
+label               0x11bc                                Test_Idle
+label               0x11c4                                Test_Rdy
+label               0x1214                                Error_Leak_Test
+                    0x121c    0x0368,  218        object/eTPU_QD.o
+etpu_thread         0x121c    0x0368,  218            eTPU_QD
+label               0x121c                                QD_Init
+label               0x1280                                QD_SlowNormalModeFallingEdge
+label               0x129c                                QD_SlowNormalModeRisingEdge
+label               0x12b4                                QD_SLOW_LABEL1
+label               0x131c                                QD_FastMode
+label               0x132c                                QD_COMMON
+label               0x1578                                QD_FINAL
+label               0x1580                                QD_Error
+                    0x1584    0x02a4,  169        object/eTPU_QOM.o
+etpu_thread         0x1584    0x02a4,  169            eTPU_QOM
+label               0x1584                                QOM_init_high_immediate
+label               0x1610                                QOM_init_low_immediate
+label               0x169c                                QOM_init_high_referenced
+label               0x1724                                QOM_init_low_referenced
+label               0x17ac                                QOM_next_event
+label               0x1814                                QOM_last_event
+                    0x1828    0x0144,   81        object/eTPU_SPWM.o
+etpu_thread         0x1828    0x00d4,   53            eTPU_SPWM_Master
+etpu_thread         0x18fc    0x0070,   28            eTPU_SPWM_Slave
+label               0x1828                                SPWM_Init_Master
+label               0x184c                                SPWM_Start_Master
+label               0x18a8                                SPWM_Stop_Master
+label               0x18dc                                SPWM_Manage_Master
+label               0x18f0                                SPWM_Error_Master
+label               0x18fc                                SPWM_Init_Slave
+label               0x1924                                SPWM_Start_Slave
+label               0x1948                                SPWM_Stop_Slave
+label               0x1954                                SPWM_Manage_Slave
+label               0x1964                                SPWM_Error_Slave
+                    0x196c    0x0400,  256        object/eTPU_ST_MOT_3PH.o
+etpu_thread         0x196c    0x0400,  256            eTPU_StepperMotor3PH
+label               0x196c                                STMC_INIT_REQ
+label               0x19d0                                STMC_HOLD_REQ
+label               0x19e0                                STMC_OPEN_DIR
+label               0x1b24                                STMC_OPEN_CNT
+label               0x1b48                                STMC_CLOSE_DIR
+label               0x1c8c                                STMC_CLOSE_CNT
+label               0x1cb0                                STMC_RESET_CTRL
+label               0x1cc0                                STMC_POS_CHECK
+label               0x1d1c                                STMC_OVERLAP
+label               0x1d34                                STMC_HOLD_MODE
+label               0x1d60                                STMC_TIMER_INIT
+label               0x1d68                                STMC_ErrHdl
+                    0x1d6c    0x01dc,  119        object/eTPU_ST_MOT_2PH.o
+etpu_thread         0x1d6c    0x01dc,  119            eTPU_StepperMotor2PH
+label               0x1d6c                                STMC_INIT_REQ
+label               0x1dd4                                STMC_OPEN_DIR
+label               0x1e64                                STMC_OPEN_CNT
+label               0x1e6c                                STMC_CLOSE_DIR
+label               0x1f00                                STMC_CLOSE_CNT
+label               0x1f08                                STMC_DIRECTION_CHECK
+label               0x1f44                                STMC_ErrHdl
+                    0x1f48    0x003c,   15        object/eTPU_ST_MOT_FC.o
+etpu_thread         0x1f48    0x003c,   15            eTPU_StepperMotorFC
+label               0x1f48                                STFC_INIT
+label               0x1f58                                STFC_TRANS
+label               0x1f64                                STFC_START_EVAL
+label               0x1f6c                                STFC_END_EVAL
+label               0x1f80                                STFC_ErrHdl
+                    0x1f84    0x0054,   21        object/eTPU_Timer.o
+etpu_thread         0x1f84    0x0054,   21            eTPU_TIMER
+label               0x1f84                                TIMER_start
+label               0x1fb4                                TIMER_stop
+label               0x1fb8                                TIMER_end
+
+
+SCM Segment Summary
+                    Origin    Length (bytes,words)
+.entry              0x0000    0x0600,  384
+.text               0x0800    0x17d8, 1526
+Total SCM Used = 0x1dd8 bytes
+
+
+.data (SDM)
+
+                    Origin    Size      Scope             Name
+                    0x0000    0x0000                      object/eTPU_A429_Receive.o
+                    0x0000    0x0000                      object/eTPU_A429_Transmit.o
+                    0x0000    0x0000                      object/eTPU_Leak.o
+                    0x0000    0x0000                      object/eTPU_QD.o
+                    0x0000    0x0000                      object/eTPU_QOM.o
+                    0x0000    0x0000                      object/eTPU_SPWM.o
+                    0x0000    0x0000                      object/eTPU_ST_MOT_3PH.o
+                    0x0000    0x0000                      object/eTPU_ST_MOT_2PH.o
+                    0x0000    0x0000                      object/eTPU_ST_MOT_FC.o
+                    0x0000    0x0000                      object/eTPU_Timer.o
+
+
+SDM Segment Summary
+                    Origin    Size
+.data               0x0000    0x0000
+Total Global SDM Used = 0x0000 bytes
+
+
+Channel Frame Address Space Segments (one per eTPU Function / Class)
+
+                    Origin    Size      Scope             Name
+                                                          object/eTPU_A429_Receive.o
+                    0x0000    0x0020                          eTPU_A429_ReceiveMaster (.chanframe_eTPU_A429_ReceiveMaster)
+union               0x0000    0x0004    0x0800, 0x09ef            arinc_MSG
+sint24              0x0005    0x0003    0x0800, 0x09ef            bit_mask
+union               0x0008    0x0004    0x0800, 0x09ef            p2
+pointer             0x000d    0x0003    0x0800, 0x09ef            PTR_buffer_current
+pointer             0x0011    0x0003    0x0800, 0x09ef            PTR_buffer_end
+uint24              0x0015    0x0003    0x0800, 0x09ef            channel_mask
+uint8               0x0004    0x0001    0x0800, 0x09ef            sticky_status
+pointer             0x0019    0x0003    0x0800, 0x09ef            PTR_label_table
+union               0x001c    0x0004    0x0800, 0x09ef            first_data
+                    0x0000    0x0020                          eTPU_A429_ReceiveSlave (.chanframe_eTPU_A429_ReceiveSlave)
+union               0x0000    0x0004    0x09f0, 0x0acb            arinc_MSG
+sint24              0x0005    0x0003    0x09f0, 0x0acb            bit_mask
+union               0x0008    0x0004    0x09f0, 0x0acb            p2
+pointer             0x000d    0x0003    0x09f0, 0x0acb            PTR_buffer_current
+pointer             0x0011    0x0003    0x09f0, 0x0acb            PTR_buffer_end
+uint24              0x0015    0x0003    0x09f0, 0x0acb            channel_mask
+uint8               0x0004    0x0001    0x09f0, 0x0acb            sticky_status
+pointer             0x0019    0x0003    0x09f0, 0x0acb            PTR_label_table
+union               0x001c    0x0004    0x09f0, 0x0acb            first_data
+                                                          object/eTPU_A429_Transmit.o
+                    0x0000    0x0018                          eTPU_A429_TransmitMaster (.chanframe_eTPU_A429_TransmitMaster)
+union               0x0000    0x0004    0x0acc, 0x0ca3            arinc_MSG
+sint24              0x0005    0x0003    0x0acc, 0x0ca3            bit_mask
+union               0x0008    0x0004    0x0acc, 0x0ca3            p2
+pointer             0x000d    0x0003    0x0acc, 0x0ca3            PTR_buffer_current
+pointer             0x0011    0x0003    0x0acc, 0x0ca3            PTR_buffer_end
+union               0x0014    0x0004    0x0acc, 0x0ca3            first_data
+                    0x0000    0x0018                          eTPU_A429_TransmitSlave (.chanframe_eTPU_A429_TransmitSlave)
+union               0x0000    0x0004    0x0ca4, 0x0ddf            arinc_MSG
+sint24              0x0005    0x0003    0x0ca4, 0x0ddf            bit_mask
+union               0x0008    0x0004    0x0ca4, 0x0ddf            p2
+pointer             0x000d    0x0003    0x0ca4, 0x0ddf            PTR_buffer_current
+pointer             0x0011    0x0003    0x0ca4, 0x0ddf            PTR_buffer_end
+union               0x0014    0x0004    0x0ca4, 0x0ddf            first_data
+                                                          object/eTPU_Leak.o
+                    0x0000    0x0048                          eTPU_Leak_ReferencePin (.chanframe_eTPU_Leak_ReferencePin)
+union               0x0000    0x0004    0x0de0, 0x106f            p0
+uint24              0x0005    0x0003    0x0de0, 0x106f            T_clock_period
+union               0x0008    0x0004    0x0de0, 0x106f            p2
+uint24              0x000d    0x0003    0x0de0, 0x106f            T_pulse_width
+uint8               0x0004    0x0001    0x0de0, 0x106f            acq_polarisation
+uint24              0x0011    0x0003    0x0de0, 0x106f            T_setup_conv
+uint24              0x0015    0x0003    0x0de0, 0x106f            T_init_test
+uint24              0x0019    0x0003    0x0de0, 0x106f            T_leak_timeout
+uint8               0x000c    0x0001    0x0de0, 0x106f            mux0_value
+array : union       0x001c    0x0018    0x0de0, 0x106f            TAB_mux
+union               0x0034    0x0004    0x0de0, 0x106f            test_hi
+union               0x0038    0x0004    0x0de0, 0x106f            test_lo
+uint8               0x0010    0x0001    0x0de0, 0x106f            clock_offset
+uint8               0x0014    0x0001    0x0de0, 0x106f            convstart_offset
+uint8               0x0018    0x0001    0x0de0, 0x106f            channel_reference
+uint24              0x003d    0x0003    0x0de0, 0x106f            pin_ready_mask
+uint24              0x0041    0x0003    0x0de0, 0x106f            pin_ready
+uint8               0x003c    0x0001    0x0de0, 0x106f            index
+                    0x0000    0x0048                          eTPU_Leak_MuxPin (.chanframe_eTPU_Leak_MuxPin)
+union               0x0000    0x0004    0x1070, 0x10c7            p0
+uint24              0x0005    0x0003    0x1070, 0x10c7            T_clock_period
+union               0x0008    0x0004    0x1070, 0x10c7            p2
+uint24              0x000d    0x0003    0x1070, 0x10c7            T_pulse_width
+uint8               0x0004    0x0001    0x1070, 0x10c7            acq_polarisation
+uint24              0x0011    0x0003    0x1070, 0x10c7            T_setup_conv
+uint24              0x0015    0x0003    0x1070, 0x10c7            T_init_test
+uint24              0x0019    0x0003    0x1070, 0x10c7            T_leak_timeout
+uint8               0x000c    0x0001    0x1070, 0x10c7            mux0_value
+array : union       0x001c    0x0018    0x1070, 0x10c7            TAB_mux
+union               0x0034    0x0004    0x1070, 0x10c7            test_hi
+union               0x0038    0x0004    0x1070, 0x10c7            test_lo
+uint8               0x0010    0x0001    0x1070, 0x10c7            clock_offset
+uint8               0x0014    0x0001    0x1070, 0x10c7            convstart_offset
+uint8               0x0018    0x0001    0x1070, 0x10c7            channel_reference
+uint24              0x003d    0x0003    0x1070, 0x10c7            pin_ready_mask
+uint24              0x0041    0x0003    0x1070, 0x10c7            pin_ready
+uint8               0x003c    0x0001    0x1070, 0x10c7            index
+                    0x0000    0x0048                          eTPU_Leak_ConvStartPin (.chanframe_eTPU_Leak_ConvStartPin)
+union               0x0000    0x0004    0x10c8, 0x113f            p0
+uint24              0x0005    0x0003    0x10c8, 0x113f            T_clock_period
+union               0x0008    0x0004    0x10c8, 0x113f            p2
+uint24              0x000d    0x0003    0x10c8, 0x113f            T_pulse_width
+uint8               0x0004    0x0001    0x10c8, 0x113f            acq_polarisation
+uint24              0x0011    0x0003    0x10c8, 0x113f            T_setup_conv
+uint24              0x0015    0x0003    0x10c8, 0x113f            T_init_test
+uint24              0x0019    0x0003    0x10c8, 0x113f            T_leak_timeout
+uint8               0x000c    0x0001    0x10c8, 0x113f            mux0_value
+array : union       0x001c    0x0018    0x10c8, 0x113f            TAB_mux
+union               0x0034    0x0004    0x10c8, 0x113f            test_hi
+union               0x0038    0x0004    0x10c8, 0x113f            test_lo
+uint8               0x0010    0x0001    0x10c8, 0x113f            clock_offset
+uint8               0x0014    0x0001    0x10c8, 0x113f            convstart_offset
+uint8               0x0018    0x0001    0x10c8, 0x113f            channel_reference
+uint24              0x003d    0x0003    0x10c8, 0x113f            pin_ready_mask
+uint24              0x0041    0x0003    0x10c8, 0x113f            pin_ready
+uint8               0x003c    0x0001    0x10c8, 0x113f            index
+                    0x0000    0x0048                          eTPU_Leak_Clock (.chanframe_eTPU_Leak_Clock)
+union               0x0000    0x0004    0x1140, 0x11bb            p0
+uint24              0x0005    0x0003    0x1140, 0x11bb            T_clock_period
+union               0x0008    0x0004    0x1140, 0x11bb            p2
+uint24              0x000d    0x0003    0x1140, 0x11bb            T_pulse_width
+uint8               0x0004    0x0001    0x1140, 0x11bb            acq_polarisation
+uint24              0x0011    0x0003    0x1140, 0x11bb            T_setup_conv
+uint24              0x0015    0x0003    0x1140, 0x11bb            T_init_test
+uint24              0x0019    0x0003    0x1140, 0x11bb            T_leak_timeout
+uint8               0x000c    0x0001    0x1140, 0x11bb            mux0_value
+array : union       0x001c    0x0018    0x1140, 0x11bb            TAB_mux
+union               0x0034    0x0004    0x1140, 0x11bb            test_hi
+union               0x0038    0x0004    0x1140, 0x11bb            test_lo
+uint8               0x0010    0x0001    0x1140, 0x11bb            clock_offset
+uint8               0x0014    0x0001    0x1140, 0x11bb            convstart_offset
+uint8               0x0018    0x0001    0x1140, 0x11bb            channel_reference
+uint24              0x003d    0x0003    0x1140, 0x11bb            pin_ready_mask
+uint24              0x0041    0x0003    0x1140, 0x11bb            pin_ready
+uint8               0x003c    0x0001    0x1140, 0x11bb            index
+                    0x0000    0x0048                          eTPU_Leak_TestPin (.chanframe_eTPU_Leak_TestPin)
+union               0x0000    0x0004    0x11bc, 0x121b            p0
+uint24              0x0005    0x0003    0x11bc, 0x121b            T_clock_period
+union               0x0008    0x0004    0x11bc, 0x121b            p2
+uint24              0x000d    0x0003    0x11bc, 0x121b            T_pulse_width
+uint8               0x0004    0x0001    0x11bc, 0x121b            acq_polarisation
+uint24              0x0011    0x0003    0x11bc, 0x121b            T_setup_conv
+uint24              0x0015    0x0003    0x11bc, 0x121b            T_init_test
+uint24              0x0019    0x0003    0x11bc, 0x121b            T_leak_timeout
+uint8               0x000c    0x0001    0x11bc, 0x121b            mux0_value
+array : union       0x001c    0x0018    0x11bc, 0x121b            TAB_mux
+union               0x0034    0x0004    0x11bc, 0x121b            test_hi
+union               0x0038    0x0004    0x11bc, 0x121b            test_lo
+uint8               0x0010    0x0001    0x11bc, 0x121b            clock_offset
+uint8               0x0014    0x0001    0x11bc, 0x121b            convstart_offset
+uint8               0x0018    0x0001    0x11bc, 0x121b            channel_reference
+uint24              0x003d    0x0003    0x11bc, 0x121b            pin_ready_mask
+uint24              0x0041    0x0003    0x11bc, 0x121b            pin_ready
+uint8               0x003c    0x0001    0x11bc, 0x121b            index
+                                                          object/eTPU_QD.o
+                    0x0000    0x0040                          eTPU_QD (.chanframe_eTPU_QD)
+sint24              0x0001    0x0003    0x121c, 0x1583            pc
+sint24              0x0005    0x0003    0x121c, 0x1583            rc
+sint24              0x0009    0x0003    0x121c, 0x1583            period
+uint24              0x000d    0x0003    0x121c, 0x1583            pc_max
+uint24              0x0011    0x0003    0x121c, 0x1583            pc_interrupt1
+uint24              0x0015    0x0003    0x121c, 0x1583            pc_interrupt2
+uint24              0x0019    0x0003    0x121c, 0x1583            slow_normal_threshold
+uint24              0x001d    0x0003    0x121c, 0x1583            normal_slow_threshold
+uint24              0x0021    0x0003    0x121c, 0x1583            normal_fast_threshold
+uint24              0x0025    0x0003    0x121c, 0x1583            fast_normal_threshold
+sint24              0x0029    0x0003    0x121c, 0x1583            last_leading_edge
+sint24              0x002d    0x0003    0x121c, 0x1583            last_edge
+sint24              0x0031    0x0003    0x121c, 0x1583            pc_sc
+sint8               0x0000    0x0001    0x121c, 0x1583            direction
+sint8               0x0004    0x0001    0x121c, 0x1583            last_direction
+sint8               0x0008    0x0001    0x121c, 0x1583            pins
+sint8               0x000c    0x0001    0x121c, 0x1583            mode_current
+sint8               0x0010    0x0001    0x121c, 0x1583            options
+sfract24            0x0035    0x0003    0x121c, 0x1583            ratio1
+sfract24            0x0039    0x0003    0x121c, 0x1583            ratio2
+                                                          object/eTPU_QOM.o
+                    0x0000    0x0018                          eTPU_QOM (.chanframe_eTPU_QOM)
+pointer             0x0001    0x0003    0x1584, 0x1827            PTR_event_table_end
+pointer             0x0005    0x0003    0x1584, 0x1827            PTR_event_table_current
+uint24              0x0009    0x0003    0x1584, 0x1827            nb_loop
+pointer             0x000d    0x0003    0x1584, 0x1827            PTR_T_reference
+uint24              0x0011    0x0003    0x1584, 0x1827            T_reference
+uint8               0x0000    0x0001    0x1584, 0x1827            qom_option
+struct              0x0014    0x0004    0x1584, 0x1827            first_table_event
+                                                          object/eTPU_SPWM.o
+                    0x0000    0x0018                          eTPU_SPWM_Master (.chanframe_eTPU_SPWM_Master)
+union               0x0000    0x0004    0x1828, 0x18fb            sync_channels_set1
+uint24              0x0005    0x0003    0x1828, 0x18fb            T_period
+union               0x0008    0x0004    0x1828, 0x18fb            sync_channels_set2
+uint24              0x000d    0x0003    0x1828, 0x18fb            T_pulse_on
+uint24              0x0011    0x0003    0x1828, 0x18fb            T_reference
+uint8               0x0004    0x0001    0x1828, 0x18fb            F_time_base
+uint8               0x000c    0x0001    0x1828, 0x18fb            SPWM_master_status
+                    0x0000    0x0010                          eTPU_SPWM_Slave (.chanframe_eTPU_SPWM_Slave)
+uint24              0x0001    0x0003    0x18fc, 0x196b            T_period
+uint24              0x0005    0x0003    0x18fc, 0x196b            T_pulse_on
+uint24              0x0009    0x0003    0x18fc, 0x196b            T_offset
+uint8               0x0000    0x0001    0x18fc, 0x196b            SPWM_slave_status
+pointer             0x000d    0x0003    0x18fc, 0x196b            T_reference_PTR
+uint8               0x0004    0x0001    0x18fc, 0x196b            F_time_base
+                                                          object/eTPU_ST_MOT_3PH.o
+                    0x0000    0x0020                          eTPU_StepperMotor3PH (.chanframe_eTPU_StepperMotor3PH)
+uint8               0x0000    0x0001    0x196c, 0x1d6b            PH1_CHAN_i
+uint24              0x0001    0x0003    0x196c, 0x1d6b            POS_CMD_i
+uint8               0x0004    0x0001    0x196c, 0x1d6b            PH2_CHAN_i
+uint24              0x0005    0x0003    0x196c, 0x1d6b            STEP_CNT_i
+uint8               0x0008    0x0001    0x196c, 0x1d6b            PH3_CHAN_i
+uint24              0x0009    0x0003    0x196c, 0x1d6b            STEP_TIME_i
+uint8               0x000c    0x0001    0x196c, 0x1d6b            FC_PH1_i
+uint8               0x0010    0x0001    0x196c, 0x1d6b            FC_PH2_i
+uint8               0x0014    0x0001    0x196c, 0x1d6b            FC_PH3_i
+uint24              0x000d    0x0003    0x196c, 0x1d6b            OVERLAP_TIME_i
+uint24              0x0011    0x0003    0x196c, 0x1d6b            PWM_OFF_TIME_i
+uint24              0x0015    0x0003    0x196c, 0x1d6b            PWM_ON_TIME_i
+uint8               0x0018    0x0001    0x196c, 0x1d6b            GoReq
+uint8               0x0019    0x0001    0x196c, 0x1d6b            HoldModeReq
+uint8               0x001a    0x0001    0x196c, 0x1d6b            HoldModeAct
+uint8               0x001b    0x0001    0x196c, 0x1d6b            Step_State
+uint8               0x001c    0x0001    0x196c, 0x1d6b            PWM_State
+uint8               0x001d    0x0001    0x196c, 0x1d6b            PWM_Chan
+                                                          object/eTPU_ST_MOT_2PH.o
+                    0x0000    0x0010                          eTPU_StepperMotor2PH (.chanframe_eTPU_StepperMotor2PH)
+uint8               0x0000    0x0001    0x1d6c, 0x1f47            PH1_CHAN_i
+uint24              0x0001    0x0003    0x1d6c, 0x1f47            STEP_CNT_i
+uint8               0x0004    0x0001    0x1d6c, 0x1f47            PH2_CHAN_i
+uint24              0x0005    0x0003    0x1d6c, 0x1f47            STEP_TIME_i
+uint8               0x0008    0x0001    0x1d6c, 0x1f47            DIRECTION_i
+uint24              0x0009    0x0003    0x1d6c, 0x1f47            Step_State
+uint8               0x000c    0x0001    0x1d6c, 0x1f47            F_time_base_i
+uint24              0x000d    0x0003    0x1d6c, 0x1f47            T_reference
+                                                          object/eTPU_ST_MOT_FC.o
+                    0x0000    0x0008                          eTPU_StepperMotorFC (.chanframe_eTPU_StepperMotorFC)
+uint8               0x0000    0x0001    0x1f48, 0x1f83            TransInd
+                                                          object/eTPU_Timer.o
+                    0x0000    0x0008                          eTPU_TIMER (.chanframe_eTPU_TIMER)
+uint24              0x0001    0x0003    0x1f84, 0x1fd7            Time_reference
+uint24              0x0005    0x0003    0x1f84, 0x1fd7            Time_delay
+uint8               0x0000    0x0001    0x1f84, 0x1fd7            Timer_option
+uint8               0x0004    0x0001    0x1f84, 0x1fd7            Timer_status
