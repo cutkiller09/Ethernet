@@ -4,7 +4,7 @@
 
 An Integration file inside test directory is created.
 His name is TI_Service_BatteryManager.c.
-This file contain the "main" to test and validate module. 
+This file contain the "main" to test and validate module.
 The executable generated is the integration test executable.
 
 ## Cmake Usage
