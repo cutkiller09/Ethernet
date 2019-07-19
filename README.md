@@ -11,20 +11,24 @@ The executable generated is the integration test executable.
 
 To create Cmake files, launch shell command :
 ```	terminal$ cd build
-	terminal$ cmake -G Eclipse\ CDT4\ -\ Unix\ Makefiles .. ```
+	terminal$ cmake -G Eclipse\ CDT4\ -\ Unix\ Makefiles .. 
+```
 
 ## Compilation
 
 launch shell command :
-```	terminal$ make all ```
+```	terminal$ make all 
+```
 
 ## Execution	
 
 A new Executable is created under build directory, launch it using shell command 
-```	terminal$ ./BatteryManagerService ```
+```	terminal$ ./BatteryManagerService 
+```
 
 ## Documentation	
 
 To Generate html and latex documentatin from doxygen code tags, launch it using shell command
-```	terminal$ make docBatteryManager ```
+```	terminal$ make docBatteryManager 
+```
 
