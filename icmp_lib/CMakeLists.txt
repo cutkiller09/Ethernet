@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 set (CMAKE_ECLIPSE_VERSION 4.5.1)   
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -ggdb -O0 -Wunreachable-code")
 
 set(CMAKE_C_OUTPUT_EXTENSION_REPLACE 1) 
 
@@ -13,48 +13,42 @@ endif()
 
 #--------------------------------------------------------------------------------------------------#
  
-project(Library_LibBatMngBmv700) 
+project(Icmp) 
 
 #--------------------------------------------------------------------------------------------------#
 set (SRCS  
-	./src/Library_LibBatMngBmv700.c
+	./src/Icmp.c
 )
 
 set (TI_SRCS 
-	./test/TI_Library_LibBatMngBmv700.c
-	./test/stub/Driver_SerialDriver.c
+	./test/TI_Icmp.c
+	./test/stub/LAN9250.c
+	./test/stub/Memory.c
 )  
 
 set (TV_SRCS 
-	./test/TV_Library_LibBatMngBmv700.c
+	./test/TV_Icmp.c
 ) 
 
-include_directories (
-	../../02_Middleware/Library_StdLib/inc   
+include_directories ( 
 	./inc 
 )
  
-add_subdirectory(../../03_Driver Build_Driver) 
+add_subdirectory(../driver_LAN9250 Build_Driver) 
 
 #--------------------------------------------------------------------------------------------------# 
-add_executable(TI_LibBatMngBmv700 ${SRCS} ${TI_SRCS})  
-target_include_directories (TI_LibBatMngBmv700 PRIVATE
+add_executable(TI_Icmp ${SRCS} ${TI_SRCS})  
+target_include_directories (TI_Icmp PRIVATE
 							./test/stub/ )  	
-target_link_libraries(TI_LibBatMngBmv700 --coverage)	 		
-set_target_properties(TI_LibBatMngBmv700 PROPERTIES EXCLUDE_FROM_ALL TRUE)  
-
-add_executable(TV_LibBatMngBmv700 ${SRCS} ${TV_SRCS})  
-target_include_directories (TV_LibBatMngBmv700 PRIVATE
-							../../03_Driver/Driver_SerialDriver/inc )  
-target_link_libraries(TV_LibBatMngBmv700 Lib_SerialDriver m --coverage)	 				
-set_target_properties(TV_LibBatMngBmv700 PROPERTIES EXCLUDE_FROM_ALL TRUE)  
+target_link_libraries(TI_Icmp --coverage)	 		
+set_target_properties(TI_Icmp PROPERTIES EXCLUDE_FROM_ALL TRUE)    
  
 #--------------------------------------------------------------------------------------------------#
 
-add_library(Lib_LibBatMngBmv700 STATIC ${SRCS} )   
-target_include_directories (Lib_LibBatMngBmv700 PRIVATE
-							../../03_Driver/Driver_SerialDriver/inc ) 
-target_link_libraries(Lib_LibBatMngBmv700 Lib_SerialDriver m )  
+add_library(Lib_Icmp STATIC ${SRCS} )   
+target_include_directories (Lib_Icmp PRIVATE
+							../driver_LAN9250/inc ) 
+target_link_libraries(Lib_Icmp LAN9250 m )  
 
 #--------------------------------------------------------------------------------------------------#
 
@@ -62,7 +56,7 @@ target_link_libraries(Lib_LibBatMngBmv700 Lib_SerialDriver m )
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
-add_custom_target(docLibBatMngBmv700
+add_custom_target(docIcmp
 ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
 WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 COMMENT "Generating API documentation with Doxygen" VERBATIM

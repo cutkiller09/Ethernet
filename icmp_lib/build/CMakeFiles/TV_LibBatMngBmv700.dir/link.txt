@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall  -rdynamic CMakeFiles/TV_LibBatMngBmv700.dir/src/Library_LibBatMngBmv700.o CMakeFiles/TV_LibBatMngBmv700.dir/test/TV_Library_LibBatMngBmv700.o  -o TV_LibBatMngBmv700 Build_Driver/build_Serial/libLib_SerialDriver.a -lm --coverage 

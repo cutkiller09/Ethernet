@@ -1,2 +1,0 @@
-/usr/bin/ar qc libLib_PCanDriver.a  CMakeFiles/Lib_PCanDriver.dir/src/Driver_PCanDriver.o
-/usr/bin/ranlib libLib_PCanDriver.a

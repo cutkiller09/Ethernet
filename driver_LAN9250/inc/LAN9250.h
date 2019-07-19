@@ -16,14 +16,8 @@
 
 /*****************************************************************************/
 /* INCLUDES                                                                  */
-/*****************************************************************************/
-/* ---- From supplier classes / modules ------------------------------------ */
+/*****************************************************************************/ 
 #include "standard.h"
-#include "DataCoupling.h"
-//#include "DriverDefinition.h"
-
-#include "LAN9250_MAC_Registers.h"
-#include "LAN9250_PHY_Registers.h"
 
 /*****************************************************************************/
 /*                              GLOBAL CONSTANTS                             */
@@ -411,15 +405,7 @@ extern LAN9250_Instance_t LAN9250Instance;
 
 /*****************************************************************************/
 /* OPERATION PROTOTYPES                                                      */
-/*****************************************************************************/
-
-extern void LAN9250InstanceInit	(LAN9250_Instance_t * LAN9250Instance, 
-								LAN9250_IO_Cfg_t * LANConfig);
-
-extern void LAN9250_Init	(void * Instance_iop,
-							void * Config_ip,
-							DriverReturnCode_t * ReturnCode_op);
-
+/*****************************************************************************/ 
 extern void LAN9250_Read	(void * Instance_iop,
 							void * ReceiveData_op,
 							UNS32 lReceiveDataSize_i,
@@ -428,58 +414,7 @@ extern void LAN9250_Read	(void * Instance_iop,
 extern void LAN9250_Write	(void * Instance_iop,
 							void * SendData_ip,
 							UNS32 lSendDataSize_i,
-							DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_Test	(void * Instance_iop,
-							void * TestData_ip,
-							DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_Control	(void * Instance_iop, 
-							void * ControlData_ip,
-							DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_Start	(void * Instance_iop,
-							UNS16 nStartType_i,
-							DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_Halt	(void * Instance_iop, 
-					DriverReturnCode_t * ReturnCode_op);
-
-extern BOOLEAN LAN9250_HMacNotBusy (void * Instance_ip);
-
-extern BOOLEAN LAN9250_HMacReadReg	(void * Instance_ip,
-									LAN9250_HMAC_Reg_Index_t RegIndex_i,
-									UNS32  *lData_op);						   
-
-extern BOOLEAN LAN9250_HMacWriteReg	(void * Instance_ip,
-									LAN9250_HMAC_Reg_Index_t RegIndex_i,
-									UNS32 lData_i);
-
-extern BOOLEAN LAN9250_PhyNotBusy	(void * Instance_ip);
-
-extern BOOLEAN LAN9250_PhyReadReg	(void * Instance_ip,
-									LAN9250_PHY_Reg_Index_t RegIndex_i,
-									UNS16 * nData_op);
-
-extern BOOLEAN LAN9250_PhyWriteReg	(void * Instance_ip,
-									LAN9250_PHY_Reg_Index_t RegIndex_i,
-									UNS16 nData_i);
-
-extern void LAN9250_ReceivePacket	(void * Instance_ip,
-									void * Data_op,
-									UNS32 lLength_i,
-									DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_TransmitPacket	(void * Instance_ip,
-									void * Data_ip,
-									UNS32 lLength_i,
-									DriverReturnCode_t * ReturnCode_op);
-
-extern void LAN9250_ClearRxFIFO	(void * Instance_ip,
-								UNS32 lSize_i);
-
-extern void LAN9250_Wait_uSeconds	(void * Instance_ip,
-									UNS32 lDelay_i);
+							DriverReturnCode_t * ReturnCode_op); 
 #endif /*__LAN9250_H__*/
 
 /* EOF */

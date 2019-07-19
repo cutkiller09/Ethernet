@@ -1,2 +1,0 @@
-/usr/bin/ar qc libLib_SerialDriver.a  CMakeFiles/Lib_SerialDriver.dir/src/Driver_SerialDriver.o
-/usr/bin/ranlib libLib_SerialDriver.a

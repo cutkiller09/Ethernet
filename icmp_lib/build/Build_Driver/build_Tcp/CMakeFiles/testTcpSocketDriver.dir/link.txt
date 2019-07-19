@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -Wall  -rdynamic CMakeFiles/testTcpSocketDriver.dir/src/Driver_TcpSocketDriver.o CMakeFiles/testTcpSocketDriver.dir/test/TI_Driver_TcpSocketDriver.o  -o testTcpSocketDriver --coverage 

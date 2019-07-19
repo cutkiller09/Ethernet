@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall  -rdynamic CMakeFiles/TI_LibBatMngBmv700.dir/src/Library_LibBatMngBmv700.o CMakeFiles/TI_LibBatMngBmv700.dir/test/TI_Library_LibBatMngBmv700.o CMakeFiles/TI_LibBatMngBmv700.dir/test/stub/Driver_SerialDriver.o  -o TI_LibBatMngBmv700 --coverage 
