@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wall  -rdynamic CMakeFiles/testPCanDriver.dir/src/Driver_PCanDriver.o CMakeFiles/testPCanDriver.dir/test/TI_Driver_PCanDriver.o  -o testPCanDriver --coverage 

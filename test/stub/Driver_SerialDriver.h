@@ -3,9 +3,7 @@
 
 #define DRVSERIAL_SERIAL_PORT_NAME_MAX_LEN		32
 
-typedef enum {
-	E_DRVSERIAL_CLOSED = -1
-} descriptor_state_type ;
+#define K_DRVSERIAL_CLOSED -1
 
 /* Parity mode options */
 typedef enum {
@@ -28,7 +26,6 @@ typedef struct {
 	/* Stop bit presence */
 	bool b_stopbitena ;
 } serialdrv_cfg_type ;
-
 
 extern Std_ReturnType gDrvSerial_t_state_of_function ;
 extern sint32 gDrvSerial_current_s32_written ;

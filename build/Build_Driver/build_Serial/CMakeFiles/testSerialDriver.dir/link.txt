@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wall  -rdynamic CMakeFiles/testSerialDriver.dir/src/Driver_SerialDriver.o CMakeFiles/testSerialDriver.dir/test/TI_Driver_SerialDriver.o  -o testSerialDriver --coverage 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLib_LibBatMngBmv700.a  CMakeFiles/Lib_LibBatMngBmv700.dir/src/Library_LibBatMngBmv700.o
+/usr/bin/ranlib libLib_LibBatMngBmv700.a

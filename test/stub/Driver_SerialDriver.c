@@ -44,6 +44,7 @@
 #include <sys/ioctl.h>
 
 
+
 /* Constants and types  						      */
 /*============================================================================*/
 
@@ -107,7 +108,7 @@ Std_ReturnType DrvSerial_Open( const serialdrv_cfg_type * const t_configuration 
 
 		if (ps32_port_desc==NULL)
 		{
-		  fputs ("File error, 0~/01_Project/01_tangela/tangela/02_Code/02_Middleware/Library_LibBatMngBmv700/test/BMV700.bat doesn't exist",stderr);
+		  fputs ("File error, 02_Code/02_Middleware/Library_LibBatMngBmv700/test/BMV700.dat doesn't exist",stderr);
 		}
 	}
 
@@ -150,7 +151,7 @@ Std_ReturnType DrvSerial_Close( sint32 * const ps32_port_desc )
  */
 Std_ReturnType DrvSerial_Send( const sint32 s32_port_desc , const uint8 * const au8_buffer, const uint32 u32_buffer_size , sint32 * const ps32_written )
 {
-	if( (NULL_PTR != au8_buffer) && (E_DRVSERIAL_CLOSED == s32_port_desc) && (0 == u32_buffer_size))
+	if( (NULL_PTR != au8_buffer) && (K_DRVSERIAL_CLOSED == s32_port_desc) && (0 == u32_buffer_size))
 	{
 		/* NOP */
 		;
@@ -181,7 +182,7 @@ Std_ReturnType DrvSerial_Send( const sint32 s32_port_desc , const uint8 * const 
  */
 Std_ReturnType DrvSerial_Receive( const sint32 s32_port_desc , uint8 * const au8_buffer, const uint32 u32_buffer_size , sint32 * const ps32_read )
 {
-    if( (E_DRVSERIAL_CLOSED == s32_port_desc) && (0 == u32_buffer_size) )
+    if( (K_DRVSERIAL_CLOSED == s32_port_desc) && (0 == u32_buffer_size) )
     {
     	/* NOP */
     	;
@@ -209,7 +210,7 @@ Std_ReturnType DrvSerial_Receive( const sint32 s32_port_desc , uint8 * const au8
  */
 Std_ReturnType DrvSerial_Flush( const sint32 s32_port_desc )
 {
-	if( (E_DRVSERIAL_CLOSED == s32_port_desc) )
+	if( (K_DRVSERIAL_CLOSED == s32_port_desc) )
 	{
 		/* NOP */
 		;

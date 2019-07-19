@@ -12,7 +12,7 @@ The executable generated is the integration test executable.
 To create Cmake files, launch shell command :
 ```	
 terminal$ cd build
-terminal$ cmake -G Eclipse\ CDT4\ -\ Unix\ Makefiles .. 
+terminal$ cmake .. 
 ```
 
 ## Compilation
