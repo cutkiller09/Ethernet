@@ -32,15 +32,19 @@ set (TV_SRCS
 
 include_directories ( 
 	./inc 
+	../inc 
 )
  
-add_subdirectory(../driver_LAN9250 Build_Driver) 
+add_subdirectory(../driver_LAN9250 Build_Driver)  
+add_subdirectory(../Memory_lib Build_Lib) 
 
 #--------------------------------------------------------------------------------------------------# 
 add_executable(TI_Icmp ${SRCS} ${TI_SRCS})  
 target_include_directories (TI_Icmp PRIVATE
-							./test/stub/ )  	
-target_link_libraries(TI_Icmp --coverage)	 		
+							./test/stub/
+							../Memory_lib/inc  )  	
+target_link_libraries(TI_Icmp --coverage)	  
+
 set_target_properties(TI_Icmp PROPERTIES EXCLUDE_FROM_ALL TRUE)    
  
 #--------------------------------------------------------------------------------------------------#
@@ -48,19 +52,23 @@ set_target_properties(TI_Icmp PROPERTIES EXCLUDE_FROM_ALL TRUE)
 add_library(Lib_Icmp STATIC ${SRCS} )   
 target_include_directories (Lib_Icmp PRIVATE
 							../driver_LAN9250/inc ) 
-target_link_libraries(Lib_Icmp LAN9250 m )  
+target_link_libraries(Lib_Icmp LAN9250 m )   
+
+target_include_directories (Lib_Icmp PRIVATE
+							../Memory_lib/inc ) 
+target_link_libraries(Lib_Icmp Memory m )  
 
 #--------------------------------------------------------------------------------------------------#
 
-# add a target to generate API documentation with Doxygen
-find_package(Doxygen)
-if(DOXYGEN_FOUND)
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
-add_custom_target(docIcmp
-${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-COMMENT "Generating API documentation with Doxygen" VERBATIM
-)
-endif(DOXYGEN_FOUND)
+# # add a target to generate API documentation with Doxygen
+# find_package(Doxygen)
+# if(DOXYGEN_FOUND)
+# configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+# add_custom_target(docIcmp
+# ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+# WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+# COMMENT "Generating API documentation with Doxygen" VERBATIM
+# )
+# endif(DOXYGEN_FOUND)
 
 #--------------------------------------------------------------------------------------------------# 

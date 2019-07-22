@@ -13,11 +13,11 @@ endif()
 
 #--------------------------------------------------------------------------------------------------#
  
-project(LAN9250) 
+project(Memory) 
 
 #--------------------------------------------------------------------------------------------------#
 set (SRCS  
-	./src/LAN9250.c
+	./src/Memory.c
 ) 
 
 include_directories (   
@@ -26,9 +26,9 @@ include_directories (
 
 #--------------------------------------------------------------------------------------------------#
 
-if(NOT TARGET LAN9250)
-	add_library(LAN9250 STATIC ${SRCS} )  
-endif()      
+if(NOT TARGET Memory)
+	add_library(Memory STATIC ${SRCS} )  
+endif()    
 
 #--------------------------------------------------------------------------------------------------#
 
@@ -36,7 +36,7 @@ endif()
 # find_package(Doxygen)
 # if(DOXYGEN_FOUND)
 # configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
-# add_custom_target(docLAN9250
+# add_custom_target(docMemory
 # ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
 # WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 # COMMENT "Generating API documentation with Doxygen" VERBATIM

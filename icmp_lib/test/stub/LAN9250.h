@@ -18,6 +18,7 @@
 /* INCLUDES                                                                  */
 /*****************************************************************************/ 
 #include "standard.h"
+#include "Packet.h"
 
 /*****************************************************************************/
 /*                              GLOBAL CONSTANTS                             */
@@ -402,6 +403,8 @@ extern LAN9250_Instance_t LAN9250Instance;
 /*****************************************************************************/
 /* OBJECTS / INSTANCES OF CLASSES (supplied by the class)                    */
 /*****************************************************************************/
+extern IpPacket_t SIMU_IpPacket_SEND;
+extern IpPacket_t SIMU_IpPacket_RECEIVED;   
 
 /*****************************************************************************/
 /* OPERATION PROTOTYPES                                                      */

@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "lan9250.h": "c",
-        "standard.h": "c"
+        "standard.h": "c",
+        "packet.h": "c",
+        "icmp.h": "c",
+        "memory.h": "c",
+        "routerdefines_public.h": "c"
     }
 }

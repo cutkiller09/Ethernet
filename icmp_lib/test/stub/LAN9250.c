@@ -52,39 +52,11 @@ void LAN9250_Read	(void * Instance_iop,
 					UNS32 lReceiveDataSize_i,
 					DriverReturnCode_t * ReturnCode_op)
 { 
-    /* Declaration */
-   IpPacket_t IpPacket;   
-
-    UNS8    cVersion_IHL;
-    UNS8    cServiceType;
-    UNS16   nTotalLength;
-    UNS16   nIdentification;
-    UNS16   nFlags_FOffset;
-    UNS8    cTimeToLive;
-    UNS8    cProtocol;
-    UNS16   nHeaderChecksum;
-    UNS8    cSourceAddress_a[ROUTER_IP_LENGTH_C];
-    UNS8    cDestAddress_a[ROUTER_IP_LENGTH_C];
+    /* Declaration */ 
 
     /* Initialization */
-    IpPacket.Header.cVersion_IHL=0x04;
-    IpPacket.Header.cServiceType=0x00;
-    IpPacket.Header.nTotalLength=0x0054;
-    IpPacket.Header.nIdentification=0x5E39;
-    IpPacket.Header.nFlags_FOffset=0x4000;
-    IpPacket.Header.cTimeToLive=0x40;
-    IpPacket.Header.cProtocol=0x01;
-    IpPacket.Header.nHeaderChecksum=0x8448;
-    IpPacket.Header.cSourceAddress_a[0]=0xac120001;
-    IpPacket.Header.cDestAddress_a[0]=0xac120002;
-    IpPacket.Payload.Icmp.Header.cType=0x08;
-    IpPacket.Payload.Icmp.Header.cCode=0x00;
-    IpPacket.Payload.Icmp.Header.nChecksum=0x1428;
-    IpPacket.Payload.Icmp.Header.lHeaderData=0x25ed0007;
-    IpPacket.Payload.Icmp.cData_a[0]=0x96f0080000000000; 
- 
-    Memory_Copy8(ReceiveData_op,&IpPacket,ROUTER_PACKET_SIZE_C);   
-    
+    Memory_Copy8(ReceiveData_op, &SIMU_IpPacket_RECEIVED, lReceiveDataSize_i); 
+
     *ReturnCode_op = DRVRC_NO_ERROR_E;
 }
 
@@ -98,6 +70,9 @@ void LAN9250_Write	(void * Instance_iop,
 {  
     *ReturnCode_op = DRVRC_NO_ERROR_E;
 
+    /* Declaration */
 
+    /* Function Body */
+    Memory_Copy8(&SIMU_IpPacket_SEND, SendData_ip, lSendDataSize_i); 
 } 
 /*EOF*/
