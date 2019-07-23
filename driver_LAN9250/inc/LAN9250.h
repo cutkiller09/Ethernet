@@ -406,15 +406,13 @@ extern LAN9250_Instance_t LAN9250Instance;
 /*****************************************************************************/
 /* OPERATION PROTOTYPES                                                      */
 /*****************************************************************************/ 
-extern void LAN9250_Read	(void * Instance_iop,
-							void * ReceiveData_op,
-							UNS32 lReceiveDataSize_i,
-							DriverReturnCode_t * ReturnCode_op);
+extern void LAN9250_Read	(void * ReceiveData_op,
+									UNS32 lReceiveDataSize_i,
+									DriverReturnCode_t * ReturnCode_op);
 
-extern void LAN9250_Write	(void * Instance_iop,
-							void * SendData_ip,
-							UNS32 lSendDataSize_i,
-							DriverReturnCode_t * ReturnCode_op); 
+extern void LAN9250_Write	(void * SendData_ip,
+									UNS32 lSendDataSize_i,
+									DriverReturnCode_t * ReturnCode_op);
 #endif /*__LAN9250_H__*/
 
 /* EOF */

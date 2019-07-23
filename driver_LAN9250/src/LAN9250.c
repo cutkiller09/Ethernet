@@ -44,8 +44,7 @@ LAN9250_Instance_t LAN9250Instance;
 /***************************************************************/
 /* Global function : LAN9250_Read                              */
 /***************************************************************/
-void LAN9250_Read	(void * Instance_iop,
-					void * ReceiveData_op,
+void LAN9250_Read	(void * ReceiveData_op,
 					UNS32 lReceiveDataSize_i,
 					DriverReturnCode_t * ReturnCode_op)
 { 
@@ -56,8 +55,7 @@ void LAN9250_Read	(void * Instance_iop,
 /***************************************************************/
 /* Global function : LAN9250_Write                             */
 /***************************************************************/
-void LAN9250_Write	(void * Instance_iop,
-                    void * SendData_ip,
+void LAN9250_Write	(void * SendData_ip,
 					UNS32 lSendDataSize_i,
                     DriverReturnCode_t * ReturnCode_op)
 {  

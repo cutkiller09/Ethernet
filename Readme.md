@@ -3,7 +3,7 @@
 # Integration tests
 
 An Integration file inside test directory is created.
-His name is TI_Service_BatteryManager.c.
+His name is TI_Icmp.c.
 This file contain the "main" to test and validate module.
 The executable generated is the integration test executable.
 
@@ -11,6 +11,8 @@ The executable generated is the integration test executable.
 
 To create Cmake files, launch shell command :
 ```	
+terminal$ cd icmp_lib
+terminal$ mkdir build
 terminal$ cd build
 terminal$ cmake .. 
 ```
@@ -24,14 +26,13 @@ terminal$ make all
 
 ## Execution	
 
-A new Executable is created under build directory, launch it using shell command 
-```	
-terminal$ ./BatteryManagerService 
-```
+A new Library is created LibIcmp.a 
 
-## Documentation	
+## Test	
 
-To Generate html and latex documentatin from doxygen code tags, launch it using shell command
+A new Integration test is created TI_Icmp
 ```	
-terminal$ make docBatteryManager 
+terminal$ cd build
+terminal$ make TI_ICMP 
+terminal$ ./TI_Icmp 
 ```

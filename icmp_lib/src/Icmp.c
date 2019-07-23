@@ -21,8 +21,7 @@
 
 /*****************************************************************************/
 /* CLASSES / STRUCTURES / TYPES / DEFINES                                    */
-/*****************************************************************************/
-LAN9250_Instance_t LAN9250Instance; 
+/*****************************************************************************/ 
 
 #define BYTE_ORDER BIG_ENDIAN
 
@@ -159,7 +158,7 @@ void ICMP_Ping_Echo_ANSWER (IpPacket_t ReceiveData_ip, DriverReturnCode_t *Retur
 	Memory_Copy8(&SendData_ip.Payload.Icmp.cData_a[0],&ReceiveData_ip.Payload.Icmp.cData_a[0],ROUTER_ICMP_PAYLOAD_SIZE_C);
 
 	/* Body */ 
-	LAN9250_Write	((void *)&LAN9250Instance, &SendData_ip, sizeof(IpPacket_t), ReturnCode_op);
+	LAN9250_Write	(&SendData_ip, sizeof(IpPacket_t), ReturnCode_op);
 
 	/* Return Code */ 
 }
@@ -185,9 +184,9 @@ DriverReturnCode_t Manage_ICMP (void)
 	/* Initialization */
     ReturnCode_op = DRVRC_NO_ERROR_E;
 					
-	//LAN9250_Write	((void *)&LAN9250Instance, &SendData_ip, lSendDataSize_i, &ReturnCode_op);
+	//LAN9250_Write	( &SendData_ip, lSendDataSize_i, &ReturnCode_op);
 	/* Body */		 
-	LAN9250_Read ((void *)&LAN9250Instance, &ReceiveData_ip, sizeof(IpPacket_t), &ReturnCode_op);
+	LAN9250_Read (&ReceiveData_ip, sizeof(IpPacket_t), &ReturnCode_op);
 
 	if (DRVRC_NO_ERROR_E==ReturnCode_op)
 	{
