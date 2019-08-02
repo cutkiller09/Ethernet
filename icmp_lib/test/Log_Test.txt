@@ -1,0 +1,108 @@
+
+Case 0 : \************  test ICMP_ECHO frame received  ************\ 
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 2 (expected : 2) : SUCCESS
+Case 0 : tested_value = 66 (expected : 66) : SUCCESS
+Case 0 : tested_value = 172 (expected : 172) : SUCCESS
+Case 0 : tested_value = 18 (expected : 18) : SUCCESS
+Case 0 : tested_value = 2 (expected : 2) : SUCCESS
+Case 0 : tested_value = 66 (expected : 66) : SUCCESS
+Case 0 : tested_value = 113 (expected : 113) : SUCCESS
+Case 0 : tested_value = 103 (expected : 103) : SUCCESS
+Case 0 : tested_value = 8 (expected : 8) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 2 (expected : 2) : SUCCESS
+Case 0 : tested_value = 172 (expected : 172) : SUCCESS
+Case 0 : tested_value = 18 (expected : 18) : SUCCESS
+Case 0 : tested_value = 142 (expected : 142) : SUCCESS
+Case 0 : tested_value = 84 (expected : 84) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 1 (expected : 1) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 150 (expected : 150) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 4780 (expected : 4780) : SUCCESS
+Case 0 : tested_value = 40 (expected : 40) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = -1020393728 (expected : -1020393728) : SUCCESS
+Case 0 : tested_value = 49 (expected : 49) : SUCCESS
+Case 0 : tested_value = 93 (expected : 93) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+Case 0 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 1 : \************ test ICMP_ECHOREPLY frame received ************\ 
+Case 1 : tested_value = 0 (expected : 0) : SUCCESS
+Case 1 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 2 : \************ test ICMP_DEST_UNREACH frame received ************\ 
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+Case 2 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 3 : \************ test ICMP_SOURCE_QUENCH frame received ************\ 
+Case 3 : tested_value = 0 (expected : 0) : SUCCESS
+Case 3 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 4 : \************ test ICMP_REDIRECT frame received ************\ 
+Case 4 : tested_value = 0 (expected : 0) : SUCCESS
+Case 4 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 5 : \************ test ICMP_TIME_EXCEEDED frame received ************\ 
+Case 5 : tested_value = 0 (expected : 0) : SUCCESS
+Case 5 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 6 : \************ test ICMP_PARAMETERPROB frame received ************\ 
+Case 6 : tested_value = 0 (expected : 0) : SUCCESS
+Case 6 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 7 : \************ test ICMP_TIMESTAMP frame received ************\ 
+Case 7 : tested_value = 0 (expected : 0) : SUCCESS
+Case 7 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 8 : \************ test ICMP_TIMESTAMPREPLY frame received ************\ 
+Case 8 : tested_value = 0 (expected : 0) : SUCCESS
+Case 8 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 9 : \************ test ICMP_INFO_REQUEST frame received ************\ 
+Case 9 : tested_value = 0 (expected : 0) : SUCCESS
+Case 9 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 10 : \************ test ICMP_INFO_REPLY frame received ************\ 
+Case 10 : tested_value = 0 (expected : 0) : SUCCESS
+Case 10 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 11 : \************ test ICMP_ADDRESS frame received ************\ 
+Case 11 : tested_value = 0 (expected : 0) : SUCCESS
+Case 11 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 12 : \************ test ICMP_ADDRESSREPLY frame received ************\ 
+Case 12 : tested_value = 0 (expected : 0) : SUCCESS
+Case 12 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 13 : \************ test NR_ICMP_TYPES frame received ************\ 
+Case 13 : tested_value = 0 (expected : 0) : SUCCESS
+Case 13 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 14 : \************ Zero DataPayload frame generated ************\ 
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+Case 14 : tested_value = 0 (expected : 0) : SUCCESS
+
+Case 15 : \************ Random DataPayload frame generated ************\ 
+Case 15 : tested_value = 0 (expected : 0) : SUCCESS
+Case 15 : tested_value = 0 (expected : 0) : SUCCESS
+Case 15 : tested_value = 1 (expected : 1) : SUCCESS
+Case 15 : tested_value = 2 (expected : 2) : SUCCESS
+Case 15 : tested_value = 3 (expected : 3) : SUCCESS
+Case 15 : tested_value = 4 (expected : 4) : SUCCESS
+Case 15 : tested_value = 5 (expected : 5) : SUCCESS
+Case 15 : tested_value = 6 (expected : 6) : SUCCESS
+Case 15 : tested_value = 7 (expected : 7) : SUCCESS

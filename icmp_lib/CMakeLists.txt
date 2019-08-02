@@ -23,6 +23,7 @@ set (SRCS
 set (TI_SRCS 
 	./test/TI_Icmp.c
 	./test/stub/LAN9250.c
+	./test/stub/LAN9250_SPI.c
 	./test/stub/Memory.c
 )  
 
@@ -31,8 +32,7 @@ set (TV_SRCS
 ) 
 
 include_directories ( 
-	./inc 
-	../inc 
+	./inc  
 )
  
 add_subdirectory(../driver_LAN9250 Build_Driver)  
@@ -42,7 +42,8 @@ add_subdirectory(../Memory_lib Build_Lib)
 add_executable(TI_Icmp ${SRCS} ${TI_SRCS})  
 target_include_directories (TI_Icmp PRIVATE
 							./test/stub/
-							../Memory_lib/inc  )  	
+							../Memory_lib/inc
+							../driver_LAN9250/inc  )  	
 target_link_libraries(TI_Icmp --coverage)	  
 
 set_target_properties(TI_Icmp PROPERTIES EXCLUDE_FROM_ALL TRUE)    

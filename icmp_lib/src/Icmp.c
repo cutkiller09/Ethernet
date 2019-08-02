@@ -18,6 +18,9 @@
 #include "Packet.h"
 #include "Memory.h"
 #include "RouterDefines_public.h"
+#include "LAN9250_SystemMemory.h"
+#include "LAN9250.h"
+#include "LAN9250_SPI.h"
 
 /*****************************************************************************/
 /* CLASSES / STRUCTURES / TYPES / DEFINES                                    */
@@ -33,10 +36,14 @@
 # define ODDBYTE(v)	htons((UNS8)(v) << 8)
 #endif
 
+
+UNS8  FRAME_EXAMPLE[]={0x02,0x42,0x71,0x67,0x2a,0x5f,0x02,0x42,0xac,0x12,0x00,0x02,0x08,0x00,0x45,0x00,0x00,0x54,0x8b,0xf3,0x00,0x00,0x40,0x01,0x96,0x8e,0xac,0x12,0x00,0x02,0xac,0x12,0x00,0x01,0x00,0x00,0x1c,0x28,0x25,0xed,0x00,0x07,0x2e,0xc3,0x31,0x5d,0x00,0x00,0x00,0x00,0x96,0xf0,0x08,0x00,0x00,0x00,0x00,0x00,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0x1d,0x1e,0x1f,0x20,0x21,0x22,0x23,0x24,0x25};   
+
+
 /*****************************************************************************/
 /* FUNCTION PROTOTYPE                                                        */
 /*****************************************************************************/ 
-void ICMP_Ping_Echo_ANSWER (IpPacket_t ReceiveData_ip, DriverReturnCode_t *ReturnCode_op);
+void ICMP_Ping_Echo_ANSWER (Packet_t ReceiveData_p, UNS32 lReceiveDataSize_i, DriverReturnCode_t *ReturnCode_op);
                          
 /*****************************************************************************/
 /* CLASSES / STRUCTURES / TYPES / DEFINEs (private)                          */
@@ -132,33 +139,32 @@ void ICMP_Ping_Echo_CMD (void)
 
 }
 
-void ICMP_Ping_Echo_ANSWER (IpPacket_t ReceiveData_ip, DriverReturnCode_t *ReturnCode_op)
+void ICMP_Ping_Echo_ANSWER (Packet_t ReceiveData_p, UNS32 lReceiveDataSize_i, DriverReturnCode_t *ReturnCode_op)
 {
 	/* Declaration */
-	IpPacket_t SendData_ip;
+	Packet_t SendData_p;
 	UNS8 lSendDataSize_i;
 
 	/* Initialization */
 	lSendDataSize_i = sizeof(EthernetFrame_t);
-	Memory_Copy8  (&SendData_ip.Header.cDestAddress_a[0],&ReceiveData_ip.Header.cSourceAddress_a[0],ROUTER_IP_LENGTH_C);
-	Memory_Copy8  (&SendData_ip.Header.cSourceAddress_a[0],&ReceiveData_ip.Header.cDestAddress_a[0],ROUTER_IP_LENGTH_C);
-	SendData_ip.Header.cProtocol=ReceiveData_ip.Header.cProtocol;
-	SendData_ip.Header.cServiceType=ReceiveData_ip.Header.cServiceType;
-	SendData_ip.Header.cTimeToLive=ReceiveData_ip.Header.cTimeToLive;
-	SendData_ip.Header.cVersion_IHL=ReceiveData_ip.Header.cVersion_IHL;
-	SendData_ip.Header.nFlags_FOffset=ReceiveData_ip.Header.nFlags_FOffset; 
+	Memory_Copy8  (&SendData_p,&ReceiveData_p,lReceiveDataSize_i);
+	
+	Memory_Copy8  (&SendData_p.EthernetFrame.Header.cDestMACAddress_a[0],&ReceiveData_p.EthernetFrame.Header.cSourceMACAddress_a[0],ROUTER_IP_LENGTH_C);
+	Memory_Copy8  (&SendData_p.EthernetFrame.Header.cSourceMACAddress_a[0],&ReceiveData_p.EthernetFrame.Header.cDestMACAddress_a[0],ROUTER_IP_LENGTH_C);
+	
 
-	SendData_ip.Header.nHeaderChecksum=ReceiveData_ip.Header.nHeaderChecksum;  /* TO BE DONE ??? !!! */
-	SendData_ip.Header.nIdentification=ReceiveData_ip.Header.nIdentification;
-	SendData_ip.Header.nTotalLength=ReceiveData_ip.Header.nTotalLength; 
-	SendData_ip.Payload.Icmp.Header.cCode=ReceiveData_ip.Payload.Icmp.Header.cCode;
-	SendData_ip.Payload.Icmp.Header.cType=ICMP_ECHOREPLY;
-	SendData_ip.Payload.Icmp.Header.lHeaderData=ReceiveData_ip.Payload.Icmp.Header.lHeaderData;
-	SendData_ip.Payload.Icmp.Header.nChecksum=calcul_du_checksum_icmp(SendData_ip.Payload.Icmp.Header,&(SendData_ip.Payload.Icmp.cData_a), (ReceiveData_ip.Header.nTotalLength-36));  /* 36 TO BE DEFINE */
-	Memory_Copy8(&SendData_ip.Payload.Icmp.cData_a[0],&ReceiveData_ip.Payload.Icmp.cData_a[0],ROUTER_ICMP_PAYLOAD_SIZE_C);
+	Memory_Copy8  (&SendData_p.EthernetFrame.Payload.IpPacket.Header.cDestAddress_a[0],&ReceiveData_p.EthernetFrame.Payload.IpPacket.Header.cSourceAddress_a[0],ROUTER_IP_LENGTH_C);
+	Memory_Copy8  (&SendData_p.EthernetFrame.Payload.IpPacket.Header.cSourceAddress_a[0],&ReceiveData_p.EthernetFrame.Payload.IpPacket.Header.cDestAddress_a[0],ROUTER_IP_LENGTH_C);
+	
+
+	SendData_p.EthernetFrame.Payload.IpPacket.Header.nHeaderChecksum=ReceiveData_p.EthernetFrame.Payload.IpPacket.Header.nHeaderChecksum;  /* TO BE DONE ??? !!! */
+	SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.cType=ICMP_ECHOREPLY;
+	SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.lHeaderData=ReceiveData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.lHeaderData;
+	SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.nChecksum=calcul_du_checksum_icmp(SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header,&(SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.cData_a), (ReceiveData_p.EthernetFrame.Payload.IpPacket.Header.nTotalLength-ICMP_CHECKSUM_FRAME_OFFSET));  
+	Memory_Copy8(&SendData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.cData_a[0],&ReceiveData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.cData_a[0],ROUTER_ICMP_PAYLOAD_SIZE_C);
 
 	/* Body */ 
-	LAN9250_Write	(&SendData_ip, sizeof(IpPacket_t), ReturnCode_op);
+	LAN9250_Write	(&SendData_p, sizeof(Packet_t), ReturnCode_op);
 
 	/* Return Code */ 
 }
@@ -178,19 +184,19 @@ DriverReturnCode_t Manage_ICMP (void)
 {     
 	/* Declaration */
 	DriverReturnCode_t ReturnCode_op;
-	IpPacket_t SendData_ip;
-	IpPacket_t ReceiveData_ip;
+	Packet_t SendData_p;
+	Packet_t ReceiveData_p;
 
 	/* Initialization */
     ReturnCode_op = DRVRC_NO_ERROR_E;
 					
-	//LAN9250_Write	( &SendData_ip, lSendDataSize_i, &ReturnCode_op);
+	//LAN9250_Write	( &SendData_p, lSendDataSize_i, &ReturnCode_op);
 	/* Body */		 
-	LAN9250_Read (&ReceiveData_ip, sizeof(IpPacket_t), &ReturnCode_op);
+	LAN9250_Read (&ReceiveData_p, sizeof(Packet_t), &ReturnCode_op);
 
 	if (DRVRC_NO_ERROR_E==ReturnCode_op)
 	{
-		switch (ReceiveData_ip.Payload.Icmp.Header.cType)
+		switch (ReceiveData_p.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.cType)
 		{
 		case ICMP_ECHOREPLY :
 			/* Nothing to do */
@@ -210,7 +216,7 @@ DriverReturnCode_t Manage_ICMP (void)
 
 		case ICMP_ECHO :
 			/* Nothing to do */	
-			ICMP_Ping_Echo_ANSWER(ReceiveData_ip, &ReturnCode_op);	
+			ICMP_Ping_Echo_ANSWER(ReceiveData_p, sizeof(Packet_t), &ReturnCode_op);	
 			break;
 
 		case ICMP_TIME_EXCEEDED :
@@ -257,3 +263,76 @@ DriverReturnCode_t Manage_ICMP (void)
 	/* Return Code */
 	return(ReturnCode_op);
 } 
+
+
+
+
+/***************************************************************/
+/* Global function : Zero_DataPayload_Generation                */
+/***************************************************************/
+DriverReturnCode_t Zero_DataPayload_Generation(void)
+{
+	/* Declaration */
+	DriverReturnCode_t ReturnCode_op; 
+	Packet_t Frame_Packet;
+	UNS16 i=0; 
+
+	/* Initialization */
+    ReturnCode_op = DRVRC_NO_ERROR_E;
+
+	/* Body */
+	Memory_Copy8(&Frame_Packet.cData_a[0],&FRAME_EXAMPLE[0],sizeof(FRAME_EXAMPLE) );
+ 
+	/* All data set to '0' in Payload */  
+	for(i=0; i<(ROUTER_ETH_PAYLOAD_SIZE_C); i++)
+	{
+	 	Frame_Packet.EthernetFrame.Payload.cPayload_a[i]=0;
+	}
+
+	Frame_Packet.EthernetFrame.Header.nEtherType = ETHERNET_IPV4_TYPE;
+	Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.nChecksum=calcul_du_checksum_icmp(Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header,&(Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.cData_a), (Frame_Packet.EthernetFrame.Payload.IpPacket.Header.nTotalLength-ICMP_CHECKSUM_FRAME_OFFSET));   
+	 
+	LAN9250_Write	(&Frame_Packet, sizeof(Packet_t), &ReturnCode_op);
+
+	/* Return Code */
+	return(ReturnCode_op); 
+}
+
+
+/***************************************************************/
+/* Global function : Random_DataPayload_Generation              */
+/***************************************************************/
+DriverReturnCode_t Random_DataPayload_Generation(void)
+{
+	/*  Declaration */
+	DriverReturnCode_t ReturnCode_op; 
+	Packet_t Frame_Packet;
+	UNS16 i=0;
+	UNS32 lCurrentTime;
+	LAN9250_SystemMemory_t LAN9250SystemMemory;
+
+
+	/* Initialization */
+    ReturnCode_op = DRVRC_NO_ERROR_E;
+	i=0;
+	lCurrentTime=0;
+
+	/* Body */
+	Memory_Copy8(&Frame_Packet.cData_a[0],&FRAME_EXAMPLE[0],sizeof(FRAME_EXAMPLE) ); 
+
+
+	for(i=0; i<(ROUTER_ETH_PAYLOAD_SIZE_C); i++)
+	{
+		ReadRegistersLAN9250(LAN9250_FREE_RUN_ADDR, &(LAN9250SystemMemory.SYSTEM_CSR.FREE_RUN.lReg));
+		lCurrentTime = LAN9250SystemMemory.SYSTEM_CSR.FREE_RUN.lReg;
+		Frame_Packet.EthernetFrame.Payload.cPayload_a[i] = (UNS8)lCurrentTime;
+	}
+
+	Frame_Packet.EthernetFrame.Header.nEtherType = ETHERNET_IPV4_TYPE;
+	Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header.nChecksum=calcul_du_checksum_icmp(Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.Header,&(Frame_Packet.EthernetFrame.Payload.IpPacket.Payload.Icmp.cData_a), (Frame_Packet.EthernetFrame.Payload.IpPacket.Header.nTotalLength-ICMP_CHECKSUM_FRAME_OFFSET));   
+	 
+	LAN9250_Write	(&Frame_Packet, sizeof(Packet_t), &ReturnCode_op);
+
+	/* Return Code */
+	return(ReturnCode_op); 
+}

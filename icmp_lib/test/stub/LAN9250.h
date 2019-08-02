@@ -48,10 +48,8 @@
 /***************/
 /* TX/RX FIFOs */
 /***************/
-#define lRX_Data_FIFO_Port_ADDR   							  (UNS16)0x00
-#define lRX_Data_FIFO_Alias_Port_a[LAN9250_ALIAS_PORT_SIZE_C] 
-#define lTX_Data_FIFO_Port_ADDR   							  (UNS16)0x20
-#define lTX_Data_FIFO_Alias_Port_a[LAN9250_ALIAS_PORT_SIZE_C] 
+#define lRX_Data_FIFO_Port_ADDR   							  (UNS16)0x00 
+#define lTX_Data_FIFO_Port_ADDR   							  (UNS16)0x20 
 #define lRX_Status_FIFO_Port_ADDR  						      (UNS16)0x40
 #define lRX_Status_FIFO_PEEK_ADDR							  (UNS16)0x44  
 #define lTX_Status_FIFO_Port_ADDR  							  (UNS16)0x48
@@ -403,8 +401,8 @@ extern LAN9250_Instance_t LAN9250Instance;
 /*****************************************************************************/
 /* OBJECTS / INSTANCES OF CLASSES (supplied by the class)                    */
 /*****************************************************************************/
-extern IpPacket_t SIMU_IpPacket_SEND;
-extern IpPacket_t SIMU_IpPacket_RECEIVED;   
+extern Packet_t SIMU_IpPacket_SEND;
+extern Packet_t SIMU_IpPacket_RECEIVED;   
 extern BOOLEAN B_Frame_Send;
 
 /*****************************************************************************/

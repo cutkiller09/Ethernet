@@ -5,6 +5,8 @@
         "packet.h": "c",
         "icmp.h": "c",
         "memory.h": "c",
-        "routerdefines_public.h": "c"
+        "routerdefines_public.h": "c",
+        "lan9250_spi.h": "c",
+        "lan9250_systemmemory.h": "c"
     }
 }

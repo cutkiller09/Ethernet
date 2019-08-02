@@ -38,6 +38,9 @@
 #define ICMP_ADDRESSREPLY	18	/* Address Mask Reply		*/
 #define NR_ICMP_TYPES		18
 
+#define ICMP_CHECKSUM_FRAME_OFFSET  36
+
+#define ETHERNET_IPV4_TYPE (UNS16)0x0800
 
 /* ---- DEFINEs from <<embedded>> classes ---------------------------------- */
  
@@ -190,6 +193,8 @@
 /* OPERATION PROTOTYPES                                                      */
 /*****************************************************************************/
 DriverReturnCode_t Manage_ICMP (void);
+DriverReturnCode_t Zero_DataPayload_Generation(void);
+DriverReturnCode_t Random_DataPayload_Generation(void);
 
 #endif /*__IP_ICMP_H__*/
 

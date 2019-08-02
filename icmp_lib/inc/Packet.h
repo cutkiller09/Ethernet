@@ -131,9 +131,10 @@ typedef struct IpPacket_tag
 /* [Covers: ] */
 typedef union EthernetPayload_tag
 {
-    UNS8   cPayload_a[ROUTER_ETH_PAYLOAD_SIZE_C];
-    UNS8   cIpPacket_a[ROUTER_ETH_PAYLOAD_SIZE_C];
-    UNS8   cArpHeader_a[ROUTER_ETH_PAYLOAD_SIZE_C];
+    UNS8        cPayload_a[ROUTER_ETH_PAYLOAD_SIZE_C];
+    UNS8        cIpPacket_a[ROUTER_ETH_PAYLOAD_SIZE_C];
+    UNS8        cArpHeader_a[ROUTER_ETH_PAYLOAD_SIZE_C];
+    IpPacket_t  IpPacket;
 } EthernetPayload_t;
 
 /* [Code-10293034-Router::EthernetHeader] */
